@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8298EAB6-0586-4BDA-9483-83624B66B13A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExtraGunGear</RootNamespace>
+    <AssemblyName>ExtraGunGear</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="EGGPlayer.cs" />
+    <Compile Include="EGGProjectile.cs" />
+    <Compile Include="ExtraGunGear.cs" />
+    <Compile Include="Items\Armor\OutlawHat.cs" />
+    <Compile Include="Items\Armor\OutlawJacket.cs" />
+    <Compile Include="Items\Armor\OutlawPants.cs" />
+    <Compile Include="Items\Armor\TacGog.cs" />
+    <Compile Include="Items\BlazingScope.cs" />
+    <Compile Include="Items\BulletBox.cs" />
+    <Compile Include="Items\BulletPouch.cs" />
+    <Compile Include="Items\InfernoMuzzle.cs" />
+    <Compile Include="Items\LargeTorch.cs" />
+    <Compile Include="Items\LargeTorchOld.cs" />
+    <Compile Include="Items\MeteorMuzzle.cs" />
+    <Compile Include="Items\Weapons\AdamantiteAR.cs" />
+    <Compile Include="Items\Weapons\ChloroAR.cs" />
+    <Compile Include="Items\Weapons\CobaltAR.cs" />
+    <Compile Include="Items\Weapons\DoubleBarrelMusket.cs" />
+    <Compile Include="Items\Weapons\EndlessChloroBull.cs" />
+    <Compile Include="Items\Weapons\EndlessCrystalBull.cs" />
+    <Compile Include="Items\Weapons\EndlessCursedBull.cs" />
+    <Compile Include="Items\Weapons\EndlessExplodingBox.cs" />
+    <Compile Include="Items\Weapons\EndlessFireBull.cs" />
+    <Compile Include="Items\Weapons\EndlessGoldBox.cs" />
+    <Compile Include="Items\Weapons\EndlessHighVBox.cs" />
+    <Compile Include="Items\Weapons\EndlessIchorBull.cs" />
+    <Compile Include="Items\Weapons\EndlessLuminiteBox.cs" />
+    <Compile Include="Items\Weapons\EndlessMeteorBull.cs" />
+    <Compile Include="Items\Weapons\EndlessNanoBox.cs" />
+    <Compile Include="Items\Weapons\EndlessPartyBox.cs" />
+    <Compile Include="Items\Weapons\EndlessSilverBull.cs" />
+    <Compile Include="Items\Weapons\EndlessVenomBox.cs" />
+    <Compile Include="Items\Weapons\FireBullet.cs" />
+    <Compile Include="Items\Weapons\HellfireAssaultRifle.cs" />
+    <Compile Include="Items\Weapons\MythrilAR.cs" />
+    <Compile Include="Items\Weapons\PumpkinAR.cs" />
+    <Compile Include="Items\Weapons\RendAsunder.cs" />
+    <Compile Include="Items\Weapons\ShroomiteAR.cs" />
+    <Compile Include="Items\Weapons\VortexAR.cs" />
+    <Compile Include="Items\Weapons\VortexAR_Glow.cs" />
+    <Compile Include="NPCs\EGGGlobalNPC.cs" />
+    <Compile Include="NPCs\SkeletonRifleman.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Projectiles\FireBullet.cs" />
+    <Compile Include="Projectiles\PumpkinSickle.cs" />
+    <Compile Include="Projectiles\SpikeBall.cs" />
+    <Compile Include="Projectiles\VortexARProj.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework.Game\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework.Graphics\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework.Xact\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Xact.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="Terraria">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\terraria\Terraria.exe</HintPath>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Steam\steamapps\common\terraria\Terraria.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

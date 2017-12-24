@@ -1,0 +1,9 @@
+author = Tenebris110
+version = 0.1.7.4
+displayName = Extra Gunslinger Gear
+homepage = https://forums.terraria.org/index.php?threads/extra-gunslinger-gear.59120/
+hideCode = true
+hideResources = true
+includeSource = false
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+includePDB = true
