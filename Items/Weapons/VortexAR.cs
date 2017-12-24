@@ -48,14 +48,10 @@ namespace ExtraGunGear.Items.Weapons //Such namescape
             base.PostDrawInWorld(spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
         }
 
-        public override bool HoldItemFrame(Player player)
-        {
-            
-            return base.HoldItemFrame(player);
-        }
-
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            //Vector2 position2 = player.RotatedRelativePoint(new Vector2(player.itemLocation.X + 12f * player.direction + player.velocity.X, player.itemLocation.Y + 10f + player.velocity.Y), true);
+            //Lighting.AddLight(position2, .5f, .7f, 1f);
             Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(3f));
             speedX = perturbedSpeed.X;
             speedY = perturbedSpeed.Y;
@@ -89,7 +85,7 @@ namespace ExtraGunGear.Items.Weapons //Such namescape
 
         public override void SetDefaults()
         {
-            item.damage = 50;
+            item.damage = 52;
             item.crit = 2;
             item.ranged = true;
             item.width = 72;
