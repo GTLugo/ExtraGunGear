@@ -9,7 +9,7 @@ namespace ExtraGunGear.NPCs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Skeleton Rifleman");
+            DisplayName.SetDefault("Skeleton Soldier");
             Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Skeleton];
         }
 
