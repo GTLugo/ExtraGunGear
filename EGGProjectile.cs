@@ -32,19 +32,16 @@ namespace ExtraGunGear
         public override void AI(Projectile projectile)
         {
             Player owner = Main.player[projectile.owner];
-            if (projectile.friendly && projectile.owner == Main.myPlayer && !projectile.npcProj)
+            if (projectile.ranged && projectile.friendly && !projectile.npcProj && projectile.owner == Main.myPlayer)
             {
-                if (projectile.ranged && owner.GetModPlayer<EGGPlayer>(mod).hasGrip  && (projectile.timeLeft == 600)) //Test for muzzle and ranged projectile
+                if (owner.GetModPlayer<EGGPlayer>(mod).hasGrip  && (projectile.timeLeft == 600)) //Test for grip and test that the bullet just spawned
                 {
                     Vector2 cursor = (Main.MouseWorld - owner.Center).SafeNormalize(Vector2.UnitX);
                     Vector2 perturbedSpeed = (cursor * projectile.velocity.Length()).RotatedByRandom(MathHelper.ToRadians(1f));
                     projectile.velocity.X = perturbedSpeed.X;
                     projectile.velocity.Y = perturbedSpeed.Y;
                 }
-            }
-            if (projectile.friendly && projectile.owner == Main.myPlayer && !projectile.npcProj)
-            {
-                if (projectile.ranged && owner.GetModPlayer<EGGPlayer>(mod).hasMuzzle) //Test for muzzle and ranged projectile
+                if (owner.GetModPlayer<EGGPlayer>(mod).hasMuzzle) //Test for muzzle and ranged projectile
                 {
                     Lighting.AddLight(projectile.position, 1f, 0.40f, 0f);
                     if (Main.rand.Next(2) == 0)
