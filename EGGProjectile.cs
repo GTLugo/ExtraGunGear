@@ -13,6 +13,7 @@ namespace ExtraGunGear
 {
     public class EGGProjectile : GlobalProjectile
     {
+
         public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
         {
             if (projectile.friendly && projectile.owner == Main.myPlayer && !projectile.npcProj)
@@ -27,15 +28,26 @@ namespace ExtraGunGear
                 }
             }
         }
+
         public override void AI(Projectile projectile)
         {
+            Player owner = Main.player[projectile.owner];
             if (projectile.friendly && projectile.owner == Main.myPlayer && !projectile.npcProj)
             {
-                Player owner = Main.player[projectile.owner];
+                if (projectile.ranged && owner.GetModPlayer<EGGPlayer>(mod).hasGrip  && (projectile.timeLeft == 600)) //Test for muzzle and ranged projectile
+                {
+                    Vector2 cursor = (Main.MouseWorld - owner.Center).SafeNormalize(Vector2.UnitX);
+                    Vector2 perturbedSpeed = (cursor * projectile.velocity.Length()).RotatedByRandom(MathHelper.ToRadians(1f));
+                    projectile.velocity.X = perturbedSpeed.X;
+                    projectile.velocity.Y = perturbedSpeed.Y;
+                }
+            }
+            if (projectile.friendly && projectile.owner == Main.myPlayer && !projectile.npcProj)
+            {
                 if (projectile.ranged && owner.GetModPlayer<EGGPlayer>(mod).hasMuzzle) //Test for muzzle and ranged projectile
                 {
                     Lighting.AddLight(projectile.position, 1f, 0.40f, 0f);
-                    if (projectile.owner == Main.myPlayer && Main.rand.Next(2) == 0)
+                    if (Main.rand.Next(2) == 0)
                     {
                         Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Fire);
                     }

@@ -17,7 +17,7 @@ namespace ExtraGunGear.Items
         {
             Tooltip.SetDefault("Ranged attacks set enemies on fire"
                 + "\n15% increased ranged damage and critical strike chance"
-                + "\nIncreases view range (Right click to zoom out)");
+                + "\nIncreases view range for ranged weapons (Right click to zoom out)");
         }
         public override void SetDefaults()
         {
@@ -34,8 +34,11 @@ namespace ExtraGunGear.Items
             player.rangedDamage += 0.15f;
             player.rangedCrit += 15;
             base.UpdateAccessory(player, hideVisual);
-            player.scope = true;
-            //player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
+            if (player.HeldItem.ranged)
+            {
+                player.scope = true;
+            }
+            player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
         }
         
         public override void AddRecipes()

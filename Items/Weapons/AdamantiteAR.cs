@@ -60,7 +60,7 @@ namespace ExtraGunGear.Items.Weapons //Such namescape
         public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod, "MythrilAR");
+            recipe.AddIngredient(ItemID.ClockworkAssaultRifle);
             recipe.AddIngredient(ItemID.AdamantiteBar, 20);
             recipe.AddIngredient(ItemID.IllegalGunParts, 1);
             recipe.AddIngredient(ItemID.SoulofMight, 22);
@@ -68,7 +68,7 @@ namespace ExtraGunGear.Items.Weapons //Such namescape
 			recipe.SetResult(this);
 			recipe.AddRecipe();
             recipe = new ModRecipe(mod);
-            recipe.AddIngredient(mod, "MythrilAR");
+            recipe.AddIngredient(ItemID.ClockworkAssaultRifle);
             recipe.AddIngredient(ItemID.TitaniumBar, 20);
             recipe.AddIngredient(ItemID.IllegalGunParts, 1);
             recipe.AddIngredient(ItemID.SoulofMight, 22);

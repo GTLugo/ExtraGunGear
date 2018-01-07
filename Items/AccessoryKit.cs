@@ -11,34 +11,39 @@ using Terraria.ModLoader;
 
 namespace ExtraGunGear.Items
 {
-    public class MeteorMuzzle : ModItem
+    public class AccessoryKit : ModItem
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Ranged attacks set enemies on fire");
+            DisplayName.SetDefault("Illegal Accessory Kit");
+            Tooltip.SetDefault("Increases ranged accuracy dramatically"
+            + "\nDecreases ranged damage by 4%"
+            + "\nRanged attacks set enemies on fire");
         }
         public override void SetDefaults()
         {
-
-            item.width = 22;
-            item.height = 30;
+            item.width = 26;
+            item.height = 22;
             item.value = 50000;
-            item.rare = 2;
+            item.rare = 3;
             item.accessory = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //player.bulletDamage *= 1.10f;
+            player.rangedDamage -= 0.05f;
             base.UpdateAccessory(player, hideVisual);
+            player.GetModPlayer<EGGPlayer>(mod).hasGrip = true;
             player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
         }
         
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.MeteoriteBar, 18);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient(mod, "VerticalGrip");
+            recipe.AddIngredient(ItemID.IllegalGunParts, 3);
+            recipe.AddIngredient(mod, "MeteorMuzzle");
+            recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);
             recipe.AddRecipe();
         }

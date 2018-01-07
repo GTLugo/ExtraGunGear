@@ -13,7 +13,8 @@ namespace ExtraGunGear.Items.Weapons //Such namescape
             DisplayName.SetDefault("Pitcher's Pitfall");
             Tooltip.SetDefault("Four round burst"
                 + "\nOnly the first shot consumes ammo"
-                + "\nOccassionally fires an additional explosive flower");
+                + "\nOccassionally fires an additional explosive flower"
+                + "\nShoots a powerful, high velocity bullet");
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

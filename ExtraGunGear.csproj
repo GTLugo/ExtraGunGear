@@ -36,6 +36,7 @@
     <Compile Include="EGGPlayer.cs" />
     <Compile Include="EGGProjectile.cs" />
     <Compile Include="ExtraGunGear.cs" />
+    <Compile Include="Items\AccessoryKit.cs" />
     <Compile Include="Items\Armor\OutlawHat.cs" />
     <Compile Include="Items\Armor\OutlawJacket.cs" />
     <Compile Include="Items\Armor\OutlawPants.cs" />
@@ -45,11 +46,10 @@
     <Compile Include="Items\BulletPouch.cs" />
     <Compile Include="Items\InfernoMuzzle.cs" />
     <Compile Include="Items\LargeTorch.cs" />
-    <Compile Include="Items\LargeTorchOld.cs" />
     <Compile Include="Items\MeteorMuzzle.cs" />
+    <Compile Include="Items\VerticalGrip.cs" />
     <Compile Include="Items\Weapons\AdamantiteAR.cs" />
     <Compile Include="Items\Weapons\ChloroAR.cs" />
-    <Compile Include="Items\Weapons\CobaltAR.cs" />
     <Compile Include="Items\Weapons\DoubleBarrelMusket.cs" />
     <Compile Include="Items\Weapons\EndlessChloroBull.cs" />
     <Compile Include="Items\Weapons\EndlessCrystalBull.cs" />
@@ -66,13 +66,13 @@
     <Compile Include="Items\Weapons\EndlessSilverBull.cs" />
     <Compile Include="Items\Weapons\EndlessVenomBox.cs" />
     <Compile Include="Items\Weapons\FireBullet.cs" />
+    <Compile Include="Items\Weapons\HallowedSG.cs" />
     <Compile Include="Items\Weapons\HellfireAssaultRifle.cs" />
-    <Compile Include="Items\Weapons\MythrilAR.cs" />
     <Compile Include="Items\Weapons\PumpkinAR.cs" />
     <Compile Include="Items\Weapons\RendAsunder.cs" />
     <Compile Include="Items\Weapons\ShroomiteAR.cs" />
     <Compile Include="Items\Weapons\VortexAR.cs" />
-    <Compile Include="Items\Weapons\VortexAR_Glow.cs" />
+    <Compile Include="Items\Weapons\WoodSG.cs" />
     <Compile Include="NPCs\EGGGlobalNPC.cs" />
     <Compile Include="NPCs\SkeletonRifleman.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
@@ -81,7 +81,6 @@
     <Compile Include="Projectiles\FireBullet.cs" />
     <Compile Include="Projectiles\PumpkinSickle.cs" />
     <Compile Include="Projectiles\SpikeBall.cs" />
-    <Compile Include="Projectiles\VortexARProj.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">

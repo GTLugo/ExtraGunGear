@@ -32,7 +32,7 @@ namespace ExtraGunGear.Items
         {
             player.rangedDamage += 0.12f;
             base.UpdateAccessory(player, hideVisual);
-            //player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
+            player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
         }
         
         public override void AddRecipes()

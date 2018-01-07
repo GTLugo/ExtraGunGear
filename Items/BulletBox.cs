@@ -24,6 +24,7 @@ namespace ExtraGunGear.Items
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(ItemID.Wood, 12);
+            recipe.anyWood = true;
             recipe.AddIngredient(ItemID.SoulofNight, 6);
             recipe.AddTile(TileID.Sawmill);
             recipe.SetResult(this);
