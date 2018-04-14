@@ -25,9 +25,6 @@ namespace ExtraGunGear.Items.Weapons //Such namescape
             {
                 type = ProjectileID.BulletHighVelocity;
             }
-            Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(1f));
-            speedX = perturbedSpeed.X;
-            speedY = perturbedSpeed.Y;
             return true;
         }
 
@@ -63,6 +60,7 @@ namespace ExtraGunGear.Items.Weapons //Such namescape
             recipe.AddIngredient(ItemID.GoldBar, 25);
             recipe.AddIngredient(ItemID.Musket, 1);
             recipe.AddIngredient(ItemID.IllegalGunParts, 1);
+            recipe.AddIngredient(ItemID.GoldenKey, 1);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
             recipe.AddRecipe();
