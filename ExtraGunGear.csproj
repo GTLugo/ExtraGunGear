@@ -66,12 +66,14 @@
     <Compile Include="Items\Weapons\EndlessSilverBull.cs" />
     <Compile Include="Items\Weapons\EndlessVenomBox.cs" />
     <Compile Include="Items\Weapons\FireBullet.cs" />
+    <Compile Include="Items\Weapons\GoldenSR.cs" />
     <Compile Include="Items\Weapons\HallowedSG.cs" />
     <Compile Include="Items\Weapons\HellfireAssaultRifle.cs" />
     <Compile Include="Items\Weapons\PumpkinAR.cs" />
     <Compile Include="Items\Weapons\RendAsunder.cs" />
     <Compile Include="Items\Weapons\ShroomiteAR.cs" />
     <Compile Include="Items\Weapons\VortexAR.cs" />
+    <Compile Include="Items\Weapons\WoodBull.cs" />
     <Compile Include="Items\Weapons\WoodSG.cs" />
     <Compile Include="NPCs\EGGGlobalNPC.cs" />
     <Compile Include="NPCs\SkeletonRifleman.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Projectiles\FireBullet.cs" />
     <Compile Include="Projectiles\PumpkinSickle.cs" />
     <Compile Include="Projectiles\SpikeBall.cs" />
+    <Compile Include="Projectiles\WoodBull.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
