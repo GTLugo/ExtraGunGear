@@ -16,7 +16,7 @@ namespace ExtraGunGear.Items
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Increases ranged accuracy dramatically"
-            + "\nDecreases ranged damage by 15%");
+            + "\nDecreases ranged damage by 10%");
         }
         public override void SetDefaults()
         {

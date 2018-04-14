@@ -31,7 +31,7 @@ namespace ExtraGunGear.Items
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.rangedDamage -= 0.05f;
+            player.rangedDamage -= 0.04f;
             base.UpdateAccessory(player, hideVisual);
             player.GetModPlayer<EGGPlayer>(mod).hasGrip = true;
             player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;

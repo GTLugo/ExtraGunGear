@@ -34,7 +34,7 @@ namespace ExtraGunGear.NPCs
         {
             Random rnd = new Random();
             int dropChance = rnd.Next(0, 10);
-            if (dropChance > 9f)
+            if (dropChance < 1)
             {
             Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ChloroAR"));
             }
