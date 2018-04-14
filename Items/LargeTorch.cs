@@ -29,6 +29,7 @@ namespace ExtraGunGear.Items
             item.createTile = 4;
             item.tileWand = AmmoID.Gel;
             item.consumable = false;
+            item.rare = 4;
             item.flame = true;
         }
 
