@@ -30,9 +30,9 @@ namespace ExtraGunGear.Items.Weapons
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Wood, 9);
+            recipe.AddIngredient(ItemID.Wood, 2);
             recipe.anyWood = true;
-            recipe.SetResult(this, 9);
+            recipe.SetResult(this, 33);
 			recipe.AddRecipe();
 		}
 	}
