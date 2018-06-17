@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="EGGItem.cs" />
     <Compile Include="EGGPlayer.cs" />
     <Compile Include="EGGProjectile.cs" />
     <Compile Include="ExtraGunGear.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Items\Weapons\EndlessPartyBox.cs" />
     <Compile Include="Items\Weapons\EndlessSilverBull.cs" />
     <Compile Include="Items\Weapons\EndlessVenomBox.cs" />
+    <Compile Include="Items\Weapons\EndlessWoodBull.cs" />
     <Compile Include="Items\Weapons\FireBullet.cs" />
     <Compile Include="Items\Weapons\GoldenSR.cs" />
     <Compile Include="Items\Weapons\HallowedSG.cs" />

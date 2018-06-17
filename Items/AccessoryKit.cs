@@ -17,7 +17,7 @@ namespace ExtraGunGear.Items
         {
             DisplayName.SetDefault("Illegal Accessory Kit");
             Tooltip.SetDefault("Increases ranged accuracy dramatically"
-            + "\nDecreases ranged damage by 4%"
+            //+ "\nDecreases ranged damage by 4%"
             + "\nRanged attacks set enemies on fire");
         }
         public override void SetDefaults()
@@ -31,7 +31,7 @@ namespace ExtraGunGear.Items
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.rangedDamage -= 0.04f;
+            //player.rangedDamage -= 0.04f;
             base.UpdateAccessory(player, hideVisual);
             player.GetModPlayer<EGGPlayer>(mod).hasGrip = true;
             player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
@@ -41,7 +41,7 @@ namespace ExtraGunGear.Items
         {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod, "VerticalGrip");
-            recipe.AddIngredient(ItemID.IllegalGunParts, 3);
+            recipe.AddIngredient(ItemID.IllegalGunParts, 1);
             recipe.AddIngredient(mod, "MeteorMuzzle");
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);

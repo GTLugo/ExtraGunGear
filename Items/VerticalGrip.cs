@@ -16,7 +16,8 @@ namespace ExtraGunGear.Items
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Increases ranged accuracy dramatically"
-            + "\nDecreases ranged damage by 10%");
+            //+ "\nDecreases ranged damage by 10%"
+            );
         }
         public override void SetDefaults()
         {
@@ -29,7 +30,7 @@ namespace ExtraGunGear.Items
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.rangedDamage -= 0.10f;
+            //player.rangedDamage -= 0.10f;
             base.UpdateAccessory(player, hideVisual);
             player.GetModPlayer<EGGPlayer>(mod).hasGrip = true;
         }
@@ -42,6 +43,7 @@ namespace ExtraGunGear.Items
             recipe.AddIngredient(ItemID.Wood, 12);
             recipe.anyWood = true;
             recipe.AddIngredient(ItemID.Leather, 3);
+            recipe.AddIngredient(ItemID.ChlorophyteBar, 1);
             recipe.AddTile(TileID.WorkBenches);
             recipe.SetResult(this);
             recipe.AddRecipe();

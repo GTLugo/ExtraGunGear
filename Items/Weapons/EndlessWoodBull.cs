@@ -3,11 +3,11 @@ using Terraria.ModLoader;
 
 namespace ExtraGunGear.Items.Weapons
 {
-    class WoodBull : ModItem
+    class EndlessWoodBull : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Wooden Bullet");
+            DisplayName.SetDefault("Endless Wooden Bullet Pile");
             Tooltip.SetDefault("'Simple, yet effective'");
 		}
 
@@ -17,8 +17,8 @@ namespace ExtraGunGear.Items.Weapons
 			item.ranged = true;
 			item.width = 8;
 			item.height = 8;
-			item.maxStack = 999;
-			item.consumable = true;
+			item.maxStack = 1;
+			item.consumable = false;
 			item.knockBack = 1.5f;
 			item.value = 1;
 			item.rare = -1;
@@ -30,9 +30,9 @@ namespace ExtraGunGear.Items.Weapons
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Wood, 1);
-            recipe.anyWood = true;
-            recipe.SetResult(this, 33);
+            recipe.AddIngredient(mod, "WoodBull", 3996);
+            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.SetResult(this);
 			recipe.AddRecipe();
 		}
 	}

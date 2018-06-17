@@ -1,12 +1,5 @@
-using System;
 using Terraria.ID;
-using Terraria;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtraGunGear.Items.Weapons //Such namescape
 {
@@ -25,6 +18,7 @@ namespace ExtraGunGear.Items.Weapons //Such namescape
             item.width = 26;
             item.height = 26;
             item.maxStack = 1;
+            item.consumable = false;
             item.knockBack = 2f;
             item.value = 76000;
             item.rare = 6;
