@@ -31,132 +31,132 @@ Common.=Tooltip8='Simple, yet effective'
 
 
 ItemName.OutlawHat=OutlawHat
-ItemToolTip.OutlawHat={$Mods.ExtraGunGear.Common.Tooltip1}
+ItemTooltip.OutlawHat={$Mods.ExtraGunGear.Common.Tooltip1}
 
 ItemName.OutlawJacket=OutlawJacket
-ItemToolTip.OutlawJacket=5% increased damage resistance
+ItemTooltip.OutlawJacket=5% increased damage resistance
 
 ItemName.OutlawPants=OutlawPants
-ItemToolTip.OutlawPants={$Mods.ExtraGunGear.Common.Tooltip1}
+ItemTooltip.OutlawPants={$Mods.ExtraGunGear.Common.Tooltip1}
 
 ItemName.TacGog=Recon Visor
-ItemToolTip.TacGog=Allows the user to see enemies through walls\n'No one can hide from my sight'
+ItemTooltip.TacGog=Allows the user to see enemies through walls\n'No one can hide from my sight'
 
 
 // ExtraGunGear.Items
 
 
 ItemName.AccessoryKit=Illegal Accessory Kit
-ItemToolTip.AccessoryKit={$Mods.ExtraGunGear.Common.Tooltip2}\n{$Mods.ExtraGunGear.Common.Tooltip3}
+ItemTooltip.AccessoryKit={$Mods.ExtraGunGear.Common.Tooltip2}\n{$Mods.ExtraGunGear.Common.Tooltip3}
 
 ItemName.BlazingScope=BlazingScope
-ItemToolTip.BlazingScope={$Mods.ExtraGunGear.Common.Tooltip3}\n15% increased ranged damage and critical strike chance\nIncreases view range for ranged weapons (Right click to zoom out)
+ItemTooltip.BlazingScope={$Mods.ExtraGunGear.Common.Tooltip3}\n15% increased ranged damage and critical strike chance\nIncreases view range for ranged weapons (Right click to zoom out)
 
 ItemName.BulletBox=Ammunition Crate
-ItemToolTip.BulletBox=Mystical energy swarms around this crate
+ItemTooltip.BulletBox=Mystical energy swarms around this crate
 
 ItemName.BulletPouch=Advanced Bullet Pouch
-ItemToolTip.BulletPouch=Mystical energy swarms around this pouch
+ItemTooltip.BulletPouch=Mystical energy swarms around this pouch
 
 ItemName.InfernoMuzzle=InfernoMuzzle
-ItemToolTip.InfernoMuzzle={$Mods.ExtraGunGear.Common.Tooltip3}\n12% increased ranged damage
+ItemTooltip.InfernoMuzzle={$Mods.ExtraGunGear.Common.Tooltip3}\n12% increased ranged damage
 
 ItemName.LargeTorch=Giant Torch
-ItemToolTip.LargeTorch=Creates torches at the cost of gel\n'Unlimited torch power! Itty bitty inventory space.'
+ItemTooltip.LargeTorch=Creates torches at the cost of gel\n'Unlimited torch power! Itty bitty inventory space.'
 
 ItemName.MeteorMuzzle=MeteorMuzzle
-ItemToolTip.MeteorMuzzle={$Mods.ExtraGunGear.Common.Tooltip3}
+ItemTooltip.MeteorMuzzle={$Mods.ExtraGunGear.Common.Tooltip3}
 
 ItemName.VerticalGrip=VerticalGrip
-ItemToolTip.VerticalGrip={$Mods.ExtraGunGear.Common.Tooltip2}
+ItemTooltip.VerticalGrip={$Mods.ExtraGunGear.Common.Tooltip2}
 
 
 // ExtraGunGear.Items.Weapons
 
 
 ItemName.AdamantiteAR=Big Ben
-ItemToolTip.AdamantiteAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}
+ItemTooltip.AdamantiteAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}
 
 ItemName.ChloroAR=Pitcher's Pitfall
-ItemToolTip.ChloroAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\nOccassionally fires an additional explosive flower\n{$Mods.ExtraGunGear.Common.Tooltip6}
+ItemTooltip.ChloroAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\nOccassionally fires an additional explosive flower\n{$Mods.ExtraGunGear.Common.Tooltip6}
 
 ItemName.DoubleBarrelMusket=Double Barrel Musket
-ItemToolTip.DoubleBarrelMusket={$Mods.ExtraGunGear.Common.Tooltip7}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'Almost twice the firepower...'
+ItemTooltip.DoubleBarrelMusket={$Mods.ExtraGunGear.Common.Tooltip7}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'Almost twice the firepower...'
 
 ItemName.EndlessChloroBull=Endless Chlorophyte Pouch
-ItemToolTip.EndlessChloroBull='I've got you in my sights!'
+ItemTooltip.EndlessChloroBull='I've got you in my sights!'
 
 ItemName.EndlessCrystalBull=Endless Crystal Pouch
-ItemToolTip.EndlessCrystalBull='Simple Geometry'
+ItemTooltip.EndlessCrystalBull='Simple Geometry'
 
 ItemName.EndlessCursedBull=Endless Cursed Pouch
-ItemToolTip.EndlessCursedBull='I curse the man who made these...'
+ItemTooltip.EndlessCursedBull='I curse the man who made these...'
 
 ItemName.EndlessExplodingBox=Endless Exploding Crate
-ItemToolTip.EndlessExplodingBox=*explodnbublz*\n'I promise it's not the crate that explodes!'
+ItemTooltip.EndlessExplodingBox=*explodnbublz*\n'I promise it's not the crate that explodes!'
 
 ItemName.EndlessFireBull=Endless Incendiary Pouch
-ItemToolTip.EndlessFireBull='A firebender's favorite'
+ItemTooltip.EndlessFireBull='A firebender's favorite'
 
 ItemName.EndlessGoldBox=Endless Golden Crate
-ItemToolTip.EndlessGoldBox='Not worth as much as you would think'
+ItemTooltip.EndlessGoldBox='Not worth as much as you would think'
 
 ItemName.EndlessHighVBox=Endless High Velocity Crate
-ItemToolTip.EndlessHighVBox='For those who want to be MLG PR0 3L1T3'
+ItemTooltip.EndlessHighVBox='For those who want to be MLG PR0 3L1T3'
 
 ItemName.EndlessIchorBull=Endless Ichor Pouch
-ItemToolTip.EndlessIchorBull='Don't eat the yellow bullets...'
+ItemTooltip.EndlessIchorBull='Don't eat the yellow bullets...'
 
 ItemName.EndlessLuminiteBox=Endless Luminite Crate
-ItemToolTip.EndlessLuminiteBox='Taken straight from Apollo 11'
+ItemTooltip.EndlessLuminiteBox='Taken straight from Apollo 11'
 
 ItemName.EndlessMeteorBull=Endless Meteor Pouch
-ItemToolTip.EndlessMeteorBull='NASA would kill for one of these'
+ItemTooltip.EndlessMeteorBull='NASA would kill for one of these'
 
 ItemName.EndlessNanoBox=Endless Nano Hard Drive
-ItemToolTip.EndlessNanoBox='22 nanometers'
+ItemTooltip.EndlessNanoBox='22 nanometers'
 
 ItemName.EndlessPartyBox=Endless Party Crate
-ItemToolTip.EndlessPartyBox='It's a party in a box!'
+ItemTooltip.EndlessPartyBox='It's a party in a box!'
 
 ItemName.EndlessSilverBull=Endless Silver Pouch
-ItemToolTip.EndlessSilverBull='Sadly these do not repell werewolves'
+ItemTooltip.EndlessSilverBull='Sadly these do not repell werewolves'
 
 ItemName.EndlessVenomBox=Endless Venom Crate
-ItemToolTip.EndlessVenomBox='Enemy of the Endless Spider-man Crate'
+ItemTooltip.EndlessVenomBox='Enemy of the Endless Spider-man Crate'
 
 ItemName.EndlessWoodBull=Endless Wooden Bullet Pile
-ItemToolTip.EndlessWoodBull={$Mods.ExtraGunGear.Common.Tooltip8}
+ItemTooltip.EndlessWoodBull={$Mods.ExtraGunGear.Common.Tooltip8}
 
 ItemName.FireBullet=Incendiary Bullet
-ItemToolTip.FireBullet='You best head for the hills, I'm on fire'
+ItemTooltip.FireBullet='You best head for the hills, I'm on fire'
 
 ItemName.GoldenSR=Golden Sniper Rifle
-ItemToolTip.GoldenSR={$Mods.ExtraGunGear.Common.Tooltip6}\n'A reward for competitiveness'
+ItemTooltip.GoldenSR={$Mods.ExtraGunGear.Common.Tooltip6}\n'A reward for competitiveness'
 
 ItemName.HallowedSG=Hallowed Spreader
-ItemToolTip.HallowedSG=Shoots a ricocheting, crystal bullet\n'What you use when you want bullets on toast'
+ItemTooltip.HallowedSG=Shoots a ricocheting, crystal bullet\n'What you use when you want bullets on toast'
 
 ItemName.HellfireAssaultRifle=Hellfire Assault Rifle
-ItemToolTip.HellfireAssaultRifle=Three round burst\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'Die die die!'
+ItemTooltip.HellfireAssaultRifle=Three round burst\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'Die die die!'
 
 ItemName.PumpkinAR=Decapitator
-ItemToolTip.PumpkinAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\nFires an additional scythe blade\n'Let's not lose our heads'
+ItemTooltip.PumpkinAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\nFires an additional scythe blade\n'Let's not lose our heads'
 
 ItemName.RendAsunder=Rend Asunder
-ItemToolTip.RendAsunder={$Mods.ExtraGunGear.Common.Tooltip7}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'An assassin's right-hand man'
+ItemTooltip.RendAsunder={$Mods.ExtraGunGear.Common.Tooltip7}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'An assassin's right-hand man'
 
 ItemName.ShroomiteAR=Shroomite Assault Rifle
-ItemToolTip.ShroomiteAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'Delicious and potent!'
+ItemTooltip.ShroomiteAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'Delicious and potent!'
 
 ItemName.VortexAR=Vortex Pulse Rifle
-ItemToolTip.VortexAR=Five round burst\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'I love the smell of pulse munitions in the morning'
+ItemTooltip.VortexAR=Five round burst\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'I love the smell of pulse munitions in the morning'
 
 ItemName.WoodBull=Wooden Bullet
-ItemToolTip.WoodBull={$Mods.ExtraGunGear.Common.Tooltip8}
+ItemTooltip.WoodBull={$Mods.ExtraGunGear.Common.Tooltip8}
 
 ItemName.WoodSG=Pipe Shotgun
-ItemToolTip.WoodSG=Fires a spread of bullets\n'For those who are wanderers'
+ItemTooltip.WoodSG=Fires a spread of bullets\n'For those who are wanderers'
 
 
 // ExtraGunGear.NPCs
