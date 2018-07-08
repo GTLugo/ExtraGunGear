@@ -1,0 +1,175 @@
+
+// ExtraGunGear.Commons
+
+
+Common.Tooltip1=提高5%远程伤害
+// {$Mods.ExtraGunGear.Common.Tooltip1} x2
+
+Common.Tooltip2=大大提高射击精度
+// {$Mods.ExtraGunGear.Common.Tooltip2} x2
+
+Common.Tooltip3=远程伤害使敌人着火
+// {$Mods.ExtraGunGear.Common.Tooltip3} x4
+
+Common.Tooltip4=连续射出四发子弹
+// {$Mods.ExtraGunGear.Common.Tooltip4} x4
+
+Common.Tooltip5=仅第一发消耗子弹
+// {$Mods.ExtraGunGear.Common.Tooltip5} x8
+
+Common.Tooltip6=射出强大的高速子弹
+// {$Mods.ExtraGunGear.Common.Tooltip6} x2
+
+Common.Tooltip7=连续射出两发子弹
+// {$Mods.ExtraGunGear.Common.Tooltip7} x2
+
+Common.=Tooltip8='简单，但十分有效'
+// {$Mods.ExtraGunGear.Common.Tooltip8} x2
+
+
+// ExtraGunGear.Items.Armor
+
+
+ItemName.OutlawHat=歹徒之帽
+ItemToolTip.OutlawHat={$Mods.ExtraGunGear.Common.Tooltip1}
+
+ItemName.OutlawJacket=歹徒上衣
+ItemToolTip.OutlawJacket=减少5%所受伤害
+
+ItemName.OutlawPants=歹徒之裤
+ItemToolTip.OutlawPants={$Mods.ExtraGunGear.Common.Tooltip1}
+
+ItemName.TacGog=侦查镜
+ItemToolTip.TacGog=使玩家可以穿墙看到敌人\n'没有人可以逃出我的视线'
+
+
+// ExtraGunGear.Items
+
+
+ItemName.AccessoryKit=非法饰品套件
+ItemToolTip.AccessoryKit={$Mods.ExtraGunGear.Common.Tooltip2}\n{$Mods.ExtraGunGear.Common.Tooltip3}
+
+ItemName.BlazingScope=炽热的狙击镜
+ItemToolTip.BlazingScope={$Mods.ExtraGunGear.Common.Tooltip3}\n提高15%远程伤害和暴击率\n提高远程武器可视距离 (右键以聚焦到正常视野外)
+
+ItemName.BulletBox=弹药箱
+ItemToolTip.BulletBox=神秘的能量围绕着这个箱子
+
+ItemName.BulletPouch=高级子弹袋
+ItemToolTip.BulletPouch=神秘的能量围绕着这个袋子
+
+ItemName.InfernoMuzzle=烈狱枪筒
+ItemToolTip.InfernoMuzzle={$Mods.ExtraGunGear.Common.Tooltip3}\n提高12%伤害
+
+ItemName.LargeTorch=巨型火把
+ItemToolTip.LargeTorch=消耗凝胶制造火把\n'无尽的火把! 稍微节省背包空间'
+
+ItemName.MeteorMuzzle=流星枪筒
+ItemToolTip.MeteorMuzzle={$Mods.ExtraGunGear.Common.Tooltip3}
+
+ItemName.VerticalGrip=垂直握把
+ItemToolTip.VerticalGrip={$Mods.ExtraGunGear.Common.Tooltip2}
+
+
+// ExtraGunGear.Items.Weapons
+
+
+ItemName.AdamantiteAR=比格本
+ItemToolTip.AdamantiteAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}
+
+ItemName.ChloroAR=投手的陷阱
+ItemToolTip.ChloroAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n有时会射出一发额外的爆炸子弹。\n{$Mods.ExtraGunGear.Common.Tooltip6}
+
+ItemName.DoubleBarrelMusket=双筒火枪
+ItemToolTip.DoubleBarrelMusket={$Mods.ExtraGunGear.Common.Tooltip7}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'差不多是两倍的伤害...'
+
+ItemName.EndlessChloroBull=无尽绿藻子弹袋
+ItemToolTip.EndlessChloroBull='我看到你了!'
+
+ItemName.EndlessCrystalBull=无尽水晶子弹袋
+ItemToolTip.EndlessCrystalBull='简单的几何'
+
+ItemName.EndlessCursedBull=无尽诅咒子弹袋
+ItemToolTip.EndlessCursedBull='我诅咒造出这玩意的人...'
+
+ItemName.EndlessExplodingBox=无尽爆炸子弹袋
+ItemToolTip.EndlessExplodingBox=*轰*\n'我保证这袋子不会炸!'
+
+ItemName.EndlessFireBull=无尽燃烧子弹袋
+ItemToolTip.EndlessFireBull='纵火狂的最爱'
+
+ItemName.EndlessGoldBox=无尽黄金子弹袋
+ItemToolTip.EndlessGoldBox='不想你想的那么值钱'
+
+ItemName.EndlessHighVBox=无尽高速子弹袋
+ItemToolTip.EndlessHighVBox='为那些想变成MLG PR0 3L1T3的人准备'
+
+ItemName.EndlessIchorBull=无尽脓血子弹袋
+ItemToolTip.EndlessIchorBull='别吃这些黄色的子弹...'
+
+ItemName.EndlessLuminiteBox=无尽荧光弹药箱
+ItemToolTip.EndlessLuminiteBox='从阿波罗11号上带来的'
+
+ItemName.EndlessMeteorBull=无尽流星子弹袋
+ItemToolTip.EndlessMeteorBull='NASA会把其中的一个干掉的'
+
+ItemName.EndlessNanoBox=无尽纳米级硬盘
+ItemToolTip.EndlessNanoBox='22纳米'
+
+ItemName.EndlessPartyBox=无尽派对弹药箱
+ItemToolTip.EndlessPartyBox='这是一个盒中的派对!'
+
+ItemName.EndlessSilverBull=无尽白银子弹袋
+ItemToolTip.EndlessSilverBull='可惜的是他们对狼人无效'
+
+ItemName.EndlessVenomBox=无尽毒液弹药箱
+ItemToolTip.EndlessVenomBox='无尽蜘蛛侠弹药箱的敌人们'
+
+ItemName.EndlessWoodBull=无尽木质箭弹
+ItemToolTip.EndlessWoodBull={$Mods.ExtraGunGear.Common.Tooltip8}
+
+ItemName.FireBullet=燃烧弹
+ItemToolTip.FireBullet='你最好爬到山上去, 我着火了'
+
+ItemName.GoldenSR=黄金狙击步枪
+ItemToolTip.GoldenSR={$Mods.ExtraGunGear.Common.Tooltip6}\n'竞争的奖励'
+
+ItemName.HallowedSG=天堂霰弹枪
+ItemToolTip.HallowedSG=射出剔透的水晶弹\n'当你想要庆祝的时候使用它'
+
+ItemName.HellfireAssaultRifle=烈狱突击步枪
+ItemToolTip.HellfireAssaultRifle=连续射出三发子弹\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'杀!杀!杀!'
+
+ItemName.PumpkinAR=刽子手
+ItemToolTip.PumpkinAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n额外射出一柄镰刀\n'别丢了脑袋'
+
+ItemName.RendAsunder=撕裂者
+ItemToolTip.RendAsunder={$Mods.ExtraGunGear.Common.Tooltip7}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'刺客的好帮手'
+
+ItemName.ShroomiteAR=蘑菇步枪
+ItemToolTip.ShroomiteAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'美味还强力!'
+
+ItemName.VortexAR=旋涡脉冲步枪
+ItemToolTip.VortexAR=连续射出五发子弹\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'我喜欢清晨时脉冲弹药的味道'
+
+ItemName.WoodBull=木质子弹
+ItemToolTip.WoodBull={$Mods.ExtraGunGear.Common.Tooltip8}
+
+ItemName.WoodSG=管猎枪
+ItemToolTip.WoodSG=射出分散的子弹\n'为无家可归的人准备的'
+
+
+// ExtraGunGear.NPCs
+
+
+NPCName.SkeletonRifleman=骷髅士兵
+
+// ExtraGunGear.Projectiles
+
+ProjectileName.FireBullet=燃烧弹
+
+ProjectileName.PumpkinSickle=南瓜镰刀
+
+ProjectileName.SpikeBall=刺球
+
+ProjectileName.WoodBull=木质子弹
