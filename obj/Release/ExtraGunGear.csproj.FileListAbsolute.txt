@@ -1,0 +1,9 @@
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\ExtraGunGear.dll
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\ExtraGunGear.pdb
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\Microsoft.Xna.Framework.Xact.dll
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\Terraria.exe
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\ExtraGunGear.csprojAssemblyReference.cache
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\ExtraGunGear.csproj.CoreCompileInputs.cache
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\ExtraGunGear.csproj.CopyComplete
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\ExtraGunGear.dll
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\ExtraGunGear.pdb

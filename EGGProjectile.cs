@@ -49,6 +49,11 @@ namespace ExtraGunGear
                         Dust.NewDust(projectile.position, projectile.width, projectile.height, DustID.Fire);
                     }
                 }
+                if (owner.GetModPlayer<EGGPlayer>(mod).hasAmp) //Test for muzzle and ranged projectile
+                {
+                    //Vector2 cursor = (Main.MouseWorld - owner.Center).SafeNormalize(Vector2.UnitX);
+                    //Vector2 perturbedSpeed = (cursor * projectile.velocity.Length()).RotatedByRandom(MathHelper.ToRadians(1f));
+                }
             }
             base.AI(projectile);
         }

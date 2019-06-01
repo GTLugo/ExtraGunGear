@@ -68,7 +68,7 @@ namespace ExtraGunGear.Items
 			recipe.AddIngredient(ItemID.Wood, 200);
             recipe.anyWood = true;
             recipe.AddIngredient(ItemID.Gel, 300);
-            recipe.AddIngredient(ItemID.SoulofLight, 15);
+            recipe.AddIngredient(ItemID.SoulofLight, 5);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
 			recipe.AddRecipe();

@@ -23,8 +23,8 @@ namespace ExtraGunGear.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.Leather, 8);
-            recipe.AddIngredient(ItemID.SoulofLight, 6);
+			recipe.AddIngredient(ItemID.Leather, 3);
+            recipe.AddIngredient(ItemID.SoulofLight, 3);
             recipe.AddTile(TileID.Loom);
             recipe.SetResult(this);
 			recipe.AddRecipe();

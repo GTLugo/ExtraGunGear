@@ -37,80 +37,77 @@
     <Compile Include="EGGPlayer.cs" />
     <Compile Include="EGGProjectile.cs" />
     <Compile Include="ExtraGunGear.cs" />
-    <Compile Include="Items\AccessoryKit.cs" />
+    <Compile Include="Items\Accessories\AccessoryKit.cs" />
+    <Compile Include="Items\Accessories\VortexAmplifier.cs" />
     <Compile Include="Items\Armor\OutlawHat.cs" />
     <Compile Include="Items\Armor\OutlawJacket.cs" />
     <Compile Include="Items\Armor\OutlawPants.cs" />
     <Compile Include="Items\Armor\TacGog.cs" />
-    <Compile Include="Items\BlazingScope.cs" />
+    <Compile Include="Items\Accessories\BlazingScope.cs" />
     <Compile Include="Items\BulletBox.cs" />
     <Compile Include="Items\BulletPouch.cs" />
-    <Compile Include="Items\InfernoMuzzle.cs" />
+    <Compile Include="Items\Accessories\BumpStock.cs" />
+    <Compile Include="Items\Accessories\InfernoMuzzle.cs" />
     <Compile Include="Items\LargeTorch.cs" />
-    <Compile Include="Items\MeteorMuzzle.cs" />
-    <Compile Include="Items\VerticalGrip.cs" />
-    <Compile Include="Items\Weapons\AdamantiteAR.cs" />
-    <Compile Include="Items\Weapons\ChloroAR.cs" />
-    <Compile Include="Items\Weapons\DoubleBarrelMusket.cs" />
-    <Compile Include="Items\Weapons\EndlessChloroBull.cs" />
-    <Compile Include="Items\Weapons\EndlessCrystalBull.cs" />
-    <Compile Include="Items\Weapons\EndlessCursedBull.cs" />
-    <Compile Include="Items\Weapons\EndlessExplodingBox.cs" />
-    <Compile Include="Items\Weapons\EndlessFireBull.cs" />
-    <Compile Include="Items\Weapons\EndlessGoldBox.cs" />
-    <Compile Include="Items\Weapons\EndlessHighVBox.cs" />
-    <Compile Include="Items\Weapons\EndlessIchorBull.cs" />
-    <Compile Include="Items\Weapons\EndlessLuminiteBox.cs" />
-    <Compile Include="Items\Weapons\EndlessMeteorBull.cs" />
-    <Compile Include="Items\Weapons\EndlessNanoBox.cs" />
-    <Compile Include="Items\Weapons\EndlessPartyBox.cs" />
-    <Compile Include="Items\Weapons\EndlessSilverBull.cs" />
-    <Compile Include="Items\Weapons\EndlessVenomBox.cs" />
-    <Compile Include="Items\Weapons\EndlessWoodBull.cs" />
-    <Compile Include="Items\Weapons\FireBullet.cs" />
-    <Compile Include="Items\Weapons\GoldenSR.cs" />
-    <Compile Include="Items\Weapons\HallowedSG.cs" />
-    <Compile Include="Items\Weapons\HellfireAssaultRifle.cs" />
-    <Compile Include="Items\Weapons\PumpkinAR.cs" />
-    <Compile Include="Items\Weapons\RendAsunder.cs" />
-    <Compile Include="Items\Weapons\ShroomiteAR.cs" />
-    <Compile Include="Items\Weapons\VortexAR.cs" />
-    <Compile Include="Items\Weapons\WoodBull.cs" />
-    <Compile Include="Items\Weapons\WoodSG.cs" />
+    <Compile Include="Items\Accessories\MeteorMuzzle.cs" />
+    <Compile Include="Items\Accessories\VerticalGrip.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessChloroBull.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessCrystalBull.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessCursedBull.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessExplodingBox.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessFireBull.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessGoldBox.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessHighVBox.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessIchorBull.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessLuminiteBox.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessMeteorBull.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessNanoBox.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessPartyBox.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessSilverBull.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessVenomBox.cs" />
+    <Compile Include="Items\Weapons\Ammo\EndlessWoodBull.cs" />
+    <Compile Include="Items\Weapons\Ammo\FireBullet.cs" />
+    <Compile Include="Items\Weapons\Ammo\WoodBull.cs" />
+    <Compile Include="Items\Weapons\AssaultRifles\AdamantiteAR.cs" />
+    <Compile Include="Items\Weapons\AssaultRifles\ChloroAR.cs" />
+    <Compile Include="Items\Weapons\AssaultRifles\DoubleBarrelMusket.cs" />
+    <Compile Include="Items\Weapons\AssaultRifles\HellfireAssaultRifle.cs" />
+    <Compile Include="Items\Weapons\AssaultRifles\PumpkinAR.cs" />
+    <Compile Include="Items\Weapons\CorkRifle.cs" />
+    <Compile Include="Items\Weapons\Revolvers\Peacekeeper.cs" />
+    <Compile Include="Items\Weapons\Revolvers\RendAsunder.cs" />
+    <Compile Include="Items\Weapons\AssaultRifles\ShroomiteAR.cs" />
+    <Compile Include="Items\Weapons\AssaultRifles\VortexAR.cs" />
+    <Compile Include="Items\Weapons\Shotguns\HallowedSG.cs" />
+    <Compile Include="Items\Weapons\Shotguns\WoodSG.cs" />
+    <Compile Include="Items\Weapons\SMGs\SilverSMG.cs" />
+    <Compile Include="Items\Weapons\SMGs\TungstenSMG.cs" />
+    <Compile Include="Items\Weapons\Snipers\GoldenSR.cs" />
     <Compile Include="NPCs\EGGGlobalNPC.cs" />
     <Compile Include="NPCs\SkeletonRifleman.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Projectiles\Cork.cs" />
     <Compile Include="Projectiles\FireBullet.cs" />
     <Compile Include="Projectiles\PumpkinSickle.cs" />
     <Compile Include="Projectiles\SpikeBall.cs" />
     <Compile Include="Projectiles\WoodBull.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework.Game\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Game.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework.Graphics\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Graphics.dll</HintPath>
-    </Reference>
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Microsoft.Xna.Framework.Game" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics" />
     <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_32\Microsoft.Xna.Framework.Xact\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Xact.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="Terraria">
-      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\terraria\Terraria.exe</HintPath>
+    <Reference Include="Terraria, Version=1.3.5.1, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\GAMES\Steam Library\steamapps\common\Terraria\Terraria.exe</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>"C:\Program Files (x86)\Steam\steamapps\common\terraria\Terraria.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>"E:\GAMES\Steam Library\steamapps\common\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\"</PostBuildEvent>
   </PropertyGroup>
 </Project>

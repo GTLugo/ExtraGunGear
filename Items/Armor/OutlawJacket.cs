@@ -30,7 +30,7 @@ namespace ExtraGunGear.Items.Armor
 		public override void AddRecipes()
 		{
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Leather, 6);
+            recipe.AddIngredient(ItemID.Leather, 3);
             recipe.AddIngredient(ItemID.MeteoriteBar, 20);
             recipe.AddTile(TileID.Anvils);
             recipe.SetResult(this);
