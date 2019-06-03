@@ -1,5 +1,5 @@
 author = GTLugo
-version = 1.2.0.1
+version = 1.2.0.2
 displayName = Extra Gunslinger Gear
 homepage = https://forums.terraria.org/index.php?threads/extra-gunslinger-gear.59120/
 hideCode = true

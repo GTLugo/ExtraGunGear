@@ -21,19 +21,11 @@ namespace ExtraGunGear
             }
             else if (item.ranged && !player.GetModPlayer<EGGPlayer>(mod).hasStock && player.altFunctionUse != 2)
             {
-                byte prefix = item.prefix;
-                bool fav = item.favorited;
-                item.CloneDefaults(item.type);
-                item.favorited = fav;
-                item.prefix = prefix;
-                if (item.modItem != null)
-                {
-                    item.modItem.CanUseItem(player);
-                }
-
-                //item.CloneWithModdedDataFrom(item).modItem.CanUseItem(player);
+                Item itemClone = item.Clone();
+                itemClone.CloneDefaults(item.type);
+                item.autoReuse = itemClone.autoReuse;
             }
-            
+
             return base.CanUseItem(item, player);
         }
     }
