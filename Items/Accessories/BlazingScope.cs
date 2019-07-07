@@ -16,9 +16,9 @@ namespace ExtraGunGear.Items.Accessories
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("Ranged attacks set enemies on fire"
-                + "\n15% increased ranged damage and critical strike chance"
+                + "\n12% increased ranged damage and critical strike chance"
                 + "\nIncreases view range for ranged weapons"
-                + "\n\twhen accessory is visible (Right click to zoom out)");
+                + "\nwhen accessory is visible (Right click to zoom out)");
         }
         public override void SetDefaults()
         {
@@ -32,8 +32,8 @@ namespace ExtraGunGear.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.rangedDamage += 0.15f;
-            player.rangedCrit += 15;
+            player.rangedDamage += 0.12f;
+            player.rangedCrit += 12;
             base.UpdateAccessory(player, hideVisual);
             if (player.HeldItem.ranged && !hideVisual)
             {

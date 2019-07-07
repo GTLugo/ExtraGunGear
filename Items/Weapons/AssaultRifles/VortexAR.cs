@@ -29,23 +29,46 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
 
         public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
         {
+            Texture2D texture = mod.GetTexture("Items/Weapons/AssaultRifles/VortexAR_Glow");
             spriteBatch.Draw
             (
-                mod.GetTexture("Items/Weapons/VortexAR_Glow"),
+                texture,
                 new Vector2
                 (
                     item.position.X - Main.screenPosition.X + item.width * 0.5f,
-                    item.position.Y - Main.screenPosition.Y + item.height - mod.GetTexture("Items/Weapons/VortexAR_Glow").Height * 0.5f + 2f
+                    item.position.Y - Main.screenPosition.Y + item.height - texture.Height * 0.5f + 2f
                 ),
-                new Rectangle(0, 0, mod.GetTexture("Items/Weapons/VortexAR_Glow").Width, mod.GetTexture("Items/Weapons/VortexAR_Glow").Height),
+                new Rectangle(0, 0, texture.Width, texture.Height),
                 Color.White,
                 rotation,
-                mod.GetTexture("Items/Weapons/VortexAR_Glow").Size() * 0.5f,
+                texture.Size() * 0.5f,
                 scale,
                 SpriteEffects.None,
                 0f
             );
-            base.PostDrawInWorld(spriteBatch, lightColor, alphaColor, rotation, scale, whoAmI);
+        }
+
+        public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
+        {/*
+            Texture2D texture = mod.GetTexture("Items/Weapons/AssaultRifles/VortexAR_Glow");
+            spriteBatch.Draw
+            (
+                texture,
+                new Vector2
+                (
+                    item.position.X - Main.screenPosition.X + item.width * 0.5f,
+                    item.position.Y - Main.screenPosition.Y + item.height - texture.Height * 0.5f + 2f
+                ),
+                frame,
+                Color.White,
+                rotation,
+                texture.Size() * 0.5f,
+                scale,
+                SpriteEffects.None,
+                0f
+            );
+            */
+            base.PostDrawInInventory(spriteBatch, position, frame, drawColor, itemColor, origin, scale);
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

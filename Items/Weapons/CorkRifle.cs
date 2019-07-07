@@ -42,7 +42,7 @@ namespace ExtraGunGear.Items.Weapons //Such namescape
             item.useTime = 25;
             item.useStyle = 5;
             item.noMelee = true;
-            item.knockBack = 8;
+            item.knockBack = 0;
             item.value = 5000;
             item.rare = 3;
             item.UseSound = SoundID.Item11;

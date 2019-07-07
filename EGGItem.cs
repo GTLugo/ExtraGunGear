@@ -28,5 +28,29 @@ namespace ExtraGunGear
 
             return base.CanUseItem(item, player);
         }
+
+        public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            //Main.NewText("Modified Shoot");
+            if (item.ranged)
+            {
+                //Main.NewText("item is ranged");
+                if (player.GetModPlayer<EGGPlayer>(mod).hasMuzzle)
+                {
+                    //Main.NewText("player has muzzle");
+                    if (type == ProjectileID.Bullet || type == ProjectileID.BulletHighVelocity)
+                    {
+                        //Main.NewText("bullet is hitscan");
+                        //type = mod.ProjectileType("HitScan");
+                    }
+                    else if (type == ProjectileID.ChlorophyteBullet)
+                    {
+                        //Main.NewText("bullet is homing hitscan");
+                        //type = mod.ProjectileType("HitScanHoming");
+                    }
+                }
+            }
+            return base.Shoot(item, player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
+        }
     }
 }

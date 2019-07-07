@@ -14,6 +14,7 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
 			Tooltip.SetDefault("Right click to fire a 6-shot burst"
                 + "\n'An assassin's right-hand man'");
 		}
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             if (player.altFunctionUse == 2)
@@ -21,20 +22,14 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
                 Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
                 speedX = perturbedSpeed.X;
                 speedY = perturbedSpeed.Y;
+                knockBack = item.knockBack * 2;
                 return true;
             }
             else
             {
-                Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(2));
-                speedX = perturbedSpeed.X;
-                speedY = perturbedSpeed.Y;
                 return true;
             }
         }
-        /*public override bool ConsumeAmmo(Player player)
-        {
-            return !(player.itemAnimation < item.useAnimation - 2);
-        }*/
 
         public override bool AltFunctionUse(Player player)
         {
@@ -76,7 +71,7 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
                 item.reuseDelay = 90;
                 item.useStyle = 5;
                 item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/McCree Gunshot 6-shot");
-                item.damage = 15;
+                item.damage = 22;
                 item.shoot = 10;
                 item.autoReuse = false;
             }

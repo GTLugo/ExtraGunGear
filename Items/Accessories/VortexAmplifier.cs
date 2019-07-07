@@ -15,9 +15,11 @@ namespace ExtraGunGear.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Increases projectile velocity for ranged weapons"
-            //+ "\nDecreases ranged damage by 10%"
-            );
+            DisplayName.SetDefault("Arc Reactor");
+            Tooltip.SetDefault("Provides life regeneration and dramatically reduces the cooldown of healing potions" +
+                "\nReduces damage taken by 12%" +
+                "\nMay confuse nearby enemies after being struck"
+                );
         }
 
         public override void SetDefaults()
@@ -25,7 +27,8 @@ namespace ExtraGunGear.Items.Accessories
             item.width = 28;
             item.height = 28;
             item.value = 75000;
-            item.rare = 2;
+            item.rare = -12;
+            item.expert = true;
             item.accessory = true;
         }
 
@@ -59,23 +62,32 @@ namespace ExtraGunGear.Items.Accessories
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            //player.rangedDamage -= 0.10f;
-            base.UpdateAccessory(player, hideVisual);
+            player.endurance += .12f;
+            item.lifeRegen = 1;
+            player.pStone = true;
+            player.brainOfConfusion = true;
             player.GetModPlayer<EGGPlayer>(mod).hasAmp = true;
+            base.UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
-        {/*
+        {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.IronBar, 18);
-            recipe.anyIronBar = true;
-            recipe.AddIngredient(ItemID.Wood, 12);
-            recipe.anyWood = true;
-            recipe.AddIngredient(ItemID.Leather, 2);
-            recipe.AddIngredient(ItemID.ChlorophyteBar, 1);
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddIngredient(ItemID.CharmofMyths);
+            recipe.AddIngredient(mod, "SunPowerSeed");
+            recipe.AddIngredient(ItemID.WormScarf);
+            recipe.AddIngredient(ItemID.FragmentVortex, 5);
+            recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);
-            recipe.AddRecipe();*/
+            recipe.AddRecipe();
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.CharmofMyths);
+            recipe.AddIngredient(mod, "SunPowerSeed");
+            recipe.AddIngredient(ItemID.BrainOfConfusion);
+            recipe.AddIngredient(ItemID.FragmentVortex, 5);
+            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
 }
 }

@@ -3,11 +3,12 @@ using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using TerrariaOverhaul;
 
 namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
 {
 	public class Peacekeeper : ModItem
-	{
+    {
         /*public override string Texture
         {
             get
@@ -22,6 +23,7 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
 			Tooltip.SetDefault("Right click to fire a 6-shot burst"
                 + "\n'I'm feeling zesty!'");
 		}
+
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             if (player.altFunctionUse == 2)
@@ -29,7 +31,6 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
                 Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
                 speedX = perturbedSpeed.X;
                 speedY = perturbedSpeed.Y;
-                damage = (int) (item.damage * 0.714);
                 knockBack = item.knockBack * 2;
                 return true;
             }
@@ -69,7 +70,7 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
             item.knockBack = 3f;
             item.value = 50000;
             item.rare = 2;
-            item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/McCree Gunshot (no reverb)");
+            item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Item, "Sounds/Item/McCree Gunshot (no reverb)");
             item.autoReuse = false;
             item.shoot = 10;
             item.shootSpeed = 9f;
@@ -85,7 +86,7 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
                 item.useTime = 6;
                 item.reuseDelay = 90;
                 item.useStyle = 5;
-                item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/McCree Gunshot 6-shot");
+                item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Item, "Sounds/Item/McCree Gunshot 6-shot");
                 item.damage = 6;
                 item.knockBack = 3f;
                 item.shoot = 10;
@@ -97,7 +98,7 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
                 item.useTime = 20;
                 item.reuseDelay = 0;
                 item.useStyle = 5;
-                item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/McCree Gunshot (no reverb)");
+                item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Item, "Sounds/Item/McCree Gunshot (no reverb)");
                 item.damage = 6;
                 item.knockBack = 3f;
                 item.shoot = 10;

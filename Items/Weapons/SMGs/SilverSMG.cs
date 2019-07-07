@@ -52,12 +52,12 @@ namespace ExtraGunGear.Items.Weapons.SMGs //Such namescape
             item.noMelee = true;
             item.knockBack = 1.75f;
             item.value = 15000;
-            item.rare = 8;
+            item.rare = 1;
             item.UseSound = SoundID.Item11;
             item.autoReuse = true;
             item.shoot = 10;
             item.shootSpeed = 12f;
-            item.scale = 0.85f;
+            item.scale = 0.75f;
             item.useAmmo = AmmoID.Bullet;
         }
 

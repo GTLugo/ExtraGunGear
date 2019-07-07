@@ -15,12 +15,12 @@ namespace ExtraGunGear.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Ranged attacks set enemies on fire" +
+            Tooltip.SetDefault("Bullets are hit-scan" + 
+                "\nRanged attacks set enemies on fire" +
                 "\n12% increased ranged damage");
         }
         public override void SetDefaults()
         {
-
             item.width = 22;
             item.height = 30;
             item.value = 200000;
@@ -31,8 +31,8 @@ namespace ExtraGunGear.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.rangedDamage += 0.12f;
-            base.UpdateAccessory(player, hideVisual);
             player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
+            base.UpdateAccessory(player, hideVisual);
         }
         
         public override void AddRecipes()

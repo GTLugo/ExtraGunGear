@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
+using TerrariaOverhaul;
 
 namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
 {
@@ -18,26 +19,12 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
         }
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(2));
+            Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(1));
             speedX = perturbedSpeed.X;
             speedY = perturbedSpeed.Y;
             return true;
         }
-        /*public override void ModifyTooltips(List<TooltipLine> tooltips)
-        {
-            base.ModifyTooltips(tooltips);
-            float flavorChance = MathHelper.Lerp(0f, 10f, (float)Main.rand.NextDouble());
-            if (flavorChance > 5f)
-            {
-                TooltipLine line = new TooltipLine(mod, "Hellfire Assault Rifle", "Die die die");
-                tooltips.Add(line);
-            }
-            else
-            {
-                TooltipLine line = new TooltipLine(mod, "Hellfire Assault Rifle", "You made a tactical error");
-                tooltips.Add(line);
-            }
-        }*/
+
         public override bool ConsumeAmmo(Player player)
         {
             return !(player.itemAnimation < item.useAnimation - 2);
@@ -67,7 +54,42 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
             item.shootSpeed = 8f;
             item.useAmmo = AmmoID.Bullet;
         }
-		public override void AddRecipes()
+
+        //TerrariaOverhaul Compatibility
+        public int shotsAmount = 3;
+        public int shotsLeft;
+
+        public void OverhaulInit()
+        {
+            this.SetTag(ItemTags.AlwaysOverhauled, true);
+            //TerrariaOverhaul.Weapon
+            /*if (ExtraGunGear.overhaulLoaded != null)
+            {
+                if (OverhaulStuff)
+                {
+
+                }
+            }*/
+        }
+
+        /*public bool OverhaulStuff
+        {
+            get { return TerrariaOverhaul.Weapon.Update(); }
+        }
+
+        public override void Update(ref float gravity, ref float maxFallSpeed)
+        {
+            if (ExtraGunGear.overhaulLoaded != null)
+            {
+                if (OverhaulStuff)
+                {
+
+                }
+            }
+            base.Update(ref gravity, ref maxFallSpeed);
+        }*/
+
+        public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.HellstoneBar, 15);
