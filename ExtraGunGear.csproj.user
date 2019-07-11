@@ -5,4 +5,9 @@
     <StartProgram>E:\GAMES\Steam Library\steamapps\common\Terraria\Terraria.exe</StartProgram>
     <StartWorkingDirectory>E:\GAMES\Steam Library\steamapps\common\Terraria\</StartWorkingDirectory>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartAction>Program</StartAction>
+    <StartProgram>E:\Games\Steam Library\steamapps\common\Terraria\Terraria.exe</StartProgram>
+    <StartWorkingDirectory>E:\Games\Steam Library\steamapps\common\Terraria\</StartWorkingDirectory>
+  </PropertyGroup>
 </Project>

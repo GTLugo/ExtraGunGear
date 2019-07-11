@@ -13,7 +13,6 @@ namespace ExtraGunGear
 {
     public class EGGProjectile : GlobalProjectile
     {
-        
         public override void SetDefaults(Projectile projectile)
         {
             Player owner = Main.player[projectile.owner];
@@ -23,7 +22,7 @@ namespace ExtraGunGear
                 {
                     projectile.width = 4;
                     projectile.height = 4;
-                    projectile.aiStyle = 0;
+                    projectile.aiStyle = -1;
                     projectile.tileCollide = true;
                     projectile.ignoreWater = true;
                     projectile.extraUpdates = 100;
@@ -34,7 +33,6 @@ namespace ExtraGunGear
             base.SetDefaults(projectile);
         }
         
-
         public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
         {
             if (projectile.friendly && projectile.owner == Main.myPlayer && !projectile.npcProj)
@@ -95,13 +93,11 @@ namespace ExtraGunGear
                             dustColor = Color.White;
                             break;
                     }
-
                     if (projectile.type == ProjectileID.Bullet || projectile.type == ProjectileID.BulletHighVelocity)
                     {
-                        projectile.velocity = projectile.velocity / projectile.velocity.Length() * 50;
                         //Main.NewText("bullet is hitscan");
                         projectile.localAI[0] += 1f;
-                        if (projectile.localAI[0] > 2f)
+                        if (projectile.localAI[0] > 3f)
                         {
                             for (int i = 0; i < 4; i++)
                             {
@@ -110,7 +106,7 @@ namespace ExtraGunGear
                                 projectile.alpha = 255;
                                 projectile.rotation = projectile.velocity.ToRotation() + MathHelper.PiOver2;
                                 projectile.spriteDirection = projectile.direction;
-                                int trail = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y - projectile.height / 4), 1, 1, 76, 0f, 0f, 0, dustColor, 1f);
+                                int trail = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y - projectile.height / 4), 1, 1, 199, 0f, 0f, 0, dustColor, 1f);
                                 Main.dust[trail].position = projectilePosition;
                                 Main.dust[trail].scale = (float)Main.rand.Next(70, 110) * 0.013f;
                                 Main.dust[trail].velocity *= 0.2f;
@@ -122,7 +118,6 @@ namespace ExtraGunGear
                     }
                     else if (projectile.type == ProjectileID.ChlorophyteBullet)
                     {
-                        projectile.velocity = new Vector2(projectile.velocity.ToRotation(), 50 sfd);
                         //Main.NewText("bullet is homing hitscan");
                         projectile.localAI[0] += 1f;
                         if (projectile.localAI[0] > 2f)

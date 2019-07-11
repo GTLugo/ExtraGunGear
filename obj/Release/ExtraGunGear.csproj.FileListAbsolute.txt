@@ -7,3 +7,8 @@ D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Rele
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\ExtraGunGear.csproj.CopyComplete
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\ExtraGunGear.dll
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\ExtraGunGear.pdb
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\log4net.dll
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\MonoMod.RuntimeDetour.dll
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\MonoMod.Utils.dll
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\NVorbis.dll

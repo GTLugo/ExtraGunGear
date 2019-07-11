@@ -15,8 +15,7 @@ namespace ExtraGunGear.Items.Accessories
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Bullets are hit-scan" + 
-                "\nRanged attacks set enemies on fire" +
+            Tooltip.SetDefault("Ranged attacks set enemies on fire" +
                 "\n12% increased ranged damage");
         }
         public override void SetDefaults()
@@ -31,7 +30,7 @@ namespace ExtraGunGear.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.rangedDamage += 0.12f;
-            player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
+            //player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
             base.UpdateAccessory(player, hideVisual);
         }
         

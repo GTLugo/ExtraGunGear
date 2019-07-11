@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using TerrariaOverhaul;
 
 namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
 {

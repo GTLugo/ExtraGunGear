@@ -4,7 +4,6 @@ using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
-using TerrariaOverhaul;
 
 namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
 {
@@ -61,7 +60,6 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
 
         public void OverhaulInit()
         {
-            this.SetTag(ItemTags.AlwaysOverhauled, true);
             //TerrariaOverhaul.Weapon
             /*if (ExtraGunGear.overhaulLoaded != null)
             {

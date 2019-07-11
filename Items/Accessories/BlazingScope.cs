@@ -39,7 +39,7 @@ namespace ExtraGunGear.Items.Accessories
             {
                 player.scope = true;
             }
-            player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
+            //player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
         }
         
         public override void AddRecipes()
