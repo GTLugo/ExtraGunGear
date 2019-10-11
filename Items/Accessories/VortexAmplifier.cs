@@ -66,24 +66,16 @@ namespace ExtraGunGear.Items.Accessories
             item.lifeRegen = 1;
             player.pStone = true;
             player.brainOfConfusion = true;
-            player.GetModPlayer<EGGPlayer>(mod).hasAmp = true;
+            player.GetModPlayer<EGGPlayer>().hasAmp = true;
             base.UpdateAccessory(player, hideVisual);
         }
 
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddRecipeGroup("ExtraGunGear:EvilAccessory", 1);
             recipe.AddIngredient(ItemID.CharmofMyths);
             recipe.AddIngredient(mod, "SunPowerSeed");
-            recipe.AddIngredient(ItemID.WormScarf);
-            recipe.AddIngredient(ItemID.FragmentVortex, 5);
-            recipe.AddTile(TileID.TinkerersWorkbench);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
-            recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.CharmofMyths);
-            recipe.AddIngredient(mod, "SunPowerSeed");
-            recipe.AddIngredient(ItemID.BrainOfConfusion);
             recipe.AddIngredient(ItemID.FragmentVortex, 5);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);

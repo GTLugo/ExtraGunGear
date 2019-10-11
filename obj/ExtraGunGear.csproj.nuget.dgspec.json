@@ -1,0 +1,44 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\galex\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\ExtraGunGear\\ExtraGunGear.csproj": {}
+  },
+  "projects": {
+    "D:\\galex\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\ExtraGunGear\\ExtraGunGear.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\galex\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\ExtraGunGear\\ExtraGunGear.csproj",
+        "projectName": "ExtraGunGear",
+        "projectPath": "D:\\galex\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\ExtraGunGear\\ExtraGunGear.csproj",
+        "packagesPath": "C:\\Users\\galex\\.nuget\\packages\\",
+        "outputPath": "D:\\galex\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\ExtraGunGear\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\galex\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {}
+      }
+    }
+  }
+}

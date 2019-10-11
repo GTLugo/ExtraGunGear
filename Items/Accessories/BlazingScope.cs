@@ -22,7 +22,6 @@ namespace ExtraGunGear.Items.Accessories
         }
         public override void SetDefaults()
         {
-
             item.width = 22;
             item.height = 30;
             item.value = 530000;
@@ -39,7 +38,7 @@ namespace ExtraGunGear.Items.Accessories
             {
                 player.scope = true;
             }
-            //player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
+            player.GetModPlayer<EGGPlayer>().hasMuzzle = true;
         }
         
         public override void AddRecipes()

@@ -85,7 +85,7 @@ namespace ExtraGunGear
         {
             player.potionDelayTime = Item.potionDelay;
             player.restorationDelayTime = Item.restorationDelay;
-            if (player.GetModPlayer<EGGPlayer>(mod).hasAmp)
+            if (player.GetModPlayer<EGGPlayer>().hasAmp)
             {
                 player.potionDelayTime = (int)((double)player.potionDelayTime * 0.5);
                 player.restorationDelayTime = (int)((double)player.restorationDelayTime * 0.5);
@@ -104,7 +104,7 @@ namespace ExtraGunGear
             hasMSeed = false;
 
             // Super Soldier Serum effects: //
-            if (player.GetModPlayer<EGGPlayer>(mod).serums > 0)
+            if (player.GetModPlayer<EGGPlayer>().serums > 0)
             {
                 player.statLifeMax2 += serums * 100;
                 player.moveSpeed += serums * 0.1f;
@@ -134,7 +134,7 @@ namespace ExtraGunGear
             if (item.ranged)
             {
                 //Main.NewText("item is ranged");
-                if (player.GetModPlayer<EGGPlayer>(mod).hasMuzzle)
+                if (player.GetModPlayer<EGGPlayer>().hasMuzzle)
                 {
                     //Main.NewText("player has muzzle");
                     if (type == ProjectileID.Bullet || type == ProjectileID.BulletHighVelocity)

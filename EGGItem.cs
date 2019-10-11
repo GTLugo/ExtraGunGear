@@ -15,11 +15,11 @@ namespace ExtraGunGear
     {
         public override bool CanUseItem(Item item, Player player)
         {
-            if (item.ranged && player.GetModPlayer<EGGPlayer>(mod).hasStock && player.altFunctionUse != 2)
+            if (item.ranged && player.GetModPlayer<EGGPlayer>().hasStock && player.altFunctionUse != 2)
             {
                 item.autoReuse = true;
             }
-            else if (item.ranged && !player.GetModPlayer<EGGPlayer>(mod).hasStock && player.altFunctionUse != 2)
+            else if (item.ranged && !player.GetModPlayer<EGGPlayer>().hasStock && player.altFunctionUse != 2)
             {
                 Item itemClone = item.Clone();
                 itemClone.CloneDefaults(item.type);
@@ -35,7 +35,7 @@ namespace ExtraGunGear
             if (item.ranged)
             {
                 //Main.NewText("item is ranged");
-                if (player.GetModPlayer<EGGPlayer>(mod).hasMuzzle)
+                if (player.GetModPlayer<EGGPlayer>().hasMuzzle)
                 {
                     //Main.NewText("player has muzzle");
                     if (type == ProjectileID.Bullet || type == ProjectileID.BulletHighVelocity)

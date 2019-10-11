@@ -53,36 +53,23 @@ namespace ExtraGunGear.Items.Weapons.Snipers //Such namescape
             item.shootSpeed = 16f;
             item.useAmmo = AmmoID.Bullet;
         }
+        
         /*
         public override bool AltFunctionUse(Player player)
         {
             return true;
         }
+
         public override bool CanUseItem(Player player)
         {
             if (player.altFunctionUse == 2)
             {
-                item.ranged = false;
-                item.noMelee = false;
-                item.useAnimation = 21;
-                item.useTime = 21;
-                item.reuseDelay = 0;
-                item.useStyle = 1;
-                item.UseSound = SoundID.Item1;
-                item.damage = 30;
-                item.shoot = 0;
+                player.scope = true;
+                return false;
             }
             else
             {
-                item.ranged = true;
-                item.noMelee = true;
-                item.useAnimation = 36;
-                item.useTime = 36;
-                item.useStyle = 5;
-                item.reuseDelay = 0;
-                item.UseSound = SoundID.Item40;
-                item.damage = 60;
-                item.shoot = 10;
+                
             }
             return base.CanUseItem(player);
         }

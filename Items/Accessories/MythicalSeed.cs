@@ -39,7 +39,7 @@ namespace ExtraGunGear.Items.Accessories
             item.lifeRegen = 1;
             player.pStone = true;
             player.brainOfConfusion = true;
-            player.GetModPlayer<EGGPlayer>(mod).hasSeed = true;
+            player.GetModPlayer<EGGPlayer>().hasSeed = true;
             base.UpdateAccessory(player, hideVisual);
         }
 

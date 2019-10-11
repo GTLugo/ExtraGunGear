@@ -33,8 +33,8 @@ namespace ExtraGunGear.Items.Accessories
         {
             //player.rangedDamage -= 0.04f;
             base.UpdateAccessory(player, hideVisual);
-            player.GetModPlayer<EGGPlayer>(mod).hasGrip = true;
-            player.GetModPlayer<EGGPlayer>(mod).hasMuzzle = true;
+            player.GetModPlayer<EGGPlayer>().hasGrip = true;
+            player.GetModPlayer<EGGPlayer>().hasMuzzle = true;
         }
         
         public override void AddRecipes()

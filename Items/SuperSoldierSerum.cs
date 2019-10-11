@@ -40,7 +40,7 @@ namespace ExtraGunGear.Items
         {
             // Any mod that changes statLifeMax to be greater than 500 is broken and needs to fix their code.
             // This check also prevents this item from being used before vanilla health upgrades are maxed out.
-            return player.GetModPlayer<EGGPlayer>(mod).serums < EGGPlayer.maxSerums;
+            return player.GetModPlayer<EGGPlayer>().serums < EGGPlayer.maxSerums;
         }
 
         public override bool UseItem(Player player)

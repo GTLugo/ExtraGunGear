@@ -12,11 +12,16 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
 		{
 			DisplayName.SetDefault("Golden Gun");
 			Tooltip.SetDefault("Right click to fire a 6-shot burst"
+                + "\nSets musket balls ablaze"
                 + "\n'The enemy can't kill if they're dead!'");
 		}
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            if (type == ProjectileID.Bullet)
+            {
+                type = mod.ProjectileType("FireBullet");
+            }
             if (player.altFunctionUse == 2)
             {
                 Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
@@ -86,5 +91,7 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
             }
             return base.CanUseItem(player);
         }
+
+
 	}
 }

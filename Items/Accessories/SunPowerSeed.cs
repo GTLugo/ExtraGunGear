@@ -35,7 +35,7 @@ namespace ExtraGunGear.Items.Accessories
         {
             //player.rangedDamage -= 0.10f;
             base.UpdateAccessory(player, hideVisual);
-            player.GetModPlayer<EGGPlayer>(mod).hasSeed = true;
+            player.GetModPlayer<EGGPlayer>().hasSeed = true;
         }
     }
 }

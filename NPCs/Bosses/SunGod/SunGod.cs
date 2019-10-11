@@ -15,23 +15,23 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
     public class SunGod : ModNPC
     {
         private Player player;
-        private float speed;
+        //private float speed;
         private float rotationCount;
         private bool changingPhase;
-        private int bossPhase;
+        //private int BossPhase;
         private bool canHit;
 
 
-        private bool closeAttack;
+        //private bool closeAttack;
 
-        private float DecisionCounter
-        {
+        private float BossPhase
+        {   // values from 0 - 2
             get { return npc.ai[0]; }
             set { npc.ai[0] = value; }
         }
 
-        private float AttackRotation
-        {
+        private float AttackSelection
+        {   // values from 0 - 3, with 0 being unassigned
             get { return npc.ai[1]; }
             set { npc.ai[1] = value; }
         }
@@ -90,18 +90,11 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                 GetTarget();
                 Despawn();
                 canHit = true;
-
                 PhaseControl();
+
                 if (!changingPhase)
                 {
-                    MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
                     AttackControl();
-                }
-
-                DecisionCounter += 1f;
-                if (DecisionCounter > 20f)
-                {
-                    DecisionCounter = 0f;
                 }
                 npc.netUpdate = true;
             }
@@ -113,7 +106,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             player = Main.player[npc.target];
         }
 
-        private int PhaseControl()
+        private float PhaseControl()
         {
             if (npc.life <= (float)npc.lifeMax * (2f / 3f))
             {
@@ -125,9 +118,9 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             }
             else
             {
-                bossPhase = 0;
+                BossPhase = 0;
             }
-            return bossPhase;
+            return BossPhase;
         }
 
         private void ChangePhase(int phase)
@@ -140,7 +133,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                     canHit = true;
                     changingPhase = false;
                     npc.immortal = false;
-                    bossPhase = phase;
+                    BossPhase = phase;
                     PhaseFlames();
                 }
                 else
@@ -150,7 +143,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                     npc.immortal = true;
                 }
 
-                float inputValue = (PhaseCooldown % 200f) / 2f;
+                //float inputValue = (PhaseCooldown % 200f) / 2f;
                 //float dampingFunc = (float)(Math.Pow(Math.E, -0.03 * inputValue) * 50.0 * Math.Cos(-0.8 * inputValue));
                 //MoveToTarget(new Vector2(npc.position.X + 25f * (float)Math.Sin((Math.PI / 5.0) * inputValue), npc.position.Y), new Vector2(0, 0), 6f);
                 MoveToTarget(new Vector2(npc.Center.X + 75f * (float)Main.rand.NextFloat(-1f,1f), npc.Center.Y + 25f * (float)Main.rand.NextFloat(-1f, 1f)), new Vector2(0, 0), 16f, false);
@@ -187,32 +180,95 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
 
         private void AttackControl()
         {
-            if (Main.netMode != 1)
+            if (AttackSelection == 0f)
             {
-                double randomAttack = Main.rand.Next(3);
-                if (AttackCooldown % 100 == 0)
+                float randomF = Main.rand.NextFloat();
+                switch ((int)BossPhase)
                 {
-                    if (bossPhase == 2 && randomAttack == 2) // Randomly decides if attack is used
-                    {
-                        NapalmRun();
-                    }
-                    else if (bossPhase >= 1 && randomAttack == 1) // Randomly decides if attack is used
-                    {
-                        DropBombs();
-                    }
-                    else // if neither attack is used, then default to flames
-                    {
-                        ShootFlames();
-                    }
+                    case 0:
+                        if (randomF >= 0.0f)
+                        {
+                            AttackSelection = 1;
+                        }
+                        break;
+                    case 1:
+                        if (randomF >= 0.5f)
+                        {
+                            AttackSelection = 2;
+                        }
+                        else
+                        {
+                            AttackSelection = 1;
+                        }
+                        break;
+                    case 2:
+                        if (randomF >= (2f / 3f))
+                        {
+                            AttackSelection = 3;
+                        }
+                        else if (randomF >= (1f / 3f))
+                        {
+                            AttackSelection = 2;
+                        }
+                        else
+                        {
+                            AttackSelection = 1;
+                        }
+                        break;
+                    default:
+                        AttackSelection = 0;
+                        break;
                 }
-
-                AttackCooldown += 1f;
-                if (AttackCooldown > 100f)
+                switch ((int)AttackSelection)
                 {
-                    AttackCooldown = 0f;
+                    case 1:
+                        AttackCooldown = 1f;
+                        break;
+                    case 2:
+                        AttackCooldown = 200f;
+                        break;
+                    case 3:
+                        AttackCooldown = 200f;
+                        break;
+                    default:
+                        //AttackCooldown = 200f;
+                        break;
                 }
-                npc.netUpdate = true;
+                MoveToTarget(player.Center, new Vector2(0, -200f), 8f);
             }
+            else if (AttackCooldown > 0f)
+            {
+                switch ((int)AttackSelection)
+                {
+                    case 1:
+                        ShootFlames();
+                        MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
+                        break;
+                    case 2:
+                        DropBombs();
+                        //MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
+                        break;
+                    case 3:
+                        NapalmRun();
+                        //MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
+                        break;
+                    default:
+                        //AttackCooldown = 200f;
+                        break;
+                }
+            }
+            else
+            {
+                //MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
+            }
+
+            --AttackCooldown;
+            if (AttackCooldown < 0f)
+            {
+                //AttackSelection = 0f;
+                AttackCooldown = 0f;
+            }
+            npc.netUpdate = true;
         }
 
         private void ShootFlames()
@@ -374,10 +430,10 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             return (float)Math.Asin((double)Math.Sin(rotationCount)) * 2;
         }
 
-        private void DrawCorona(int phase, SpriteBatch spriteBatch, Color drawColor)
+        private void DrawCorona(SpriteBatch spriteBatch, Color drawColor)
         {
             Texture2D corona;
-            switch (phase)
+            switch ((int)BossPhase)
             {
                 case 0:
                     corona = mod.GetTexture("NPCs/Bosses/SunGod/SunGodCorona");
@@ -425,10 +481,10 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                 0f
             );
         }
-        private void DrawBody(int phase, SpriteBatch spriteBatch, Color drawColor)
+        private void DrawBody(SpriteBatch spriteBatch, Color drawColor)
         {
             Texture2D body;
-            switch (phase)
+            switch ((int)BossPhase)
             {
                 case 0:
                     body = mod.GetTexture("NPCs/Bosses/SunGod/SunGodBodyRed");
@@ -461,7 +517,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                 0f
             );
         }
-        private void DrawFace(int phase, SpriteBatch spriteBatch, Color drawColor)
+        private void DrawFace(SpriteBatch spriteBatch, Color drawColor)
         {
             Texture2D face;
             if (!changingPhase) face = mod.GetTexture("NPCs/Bosses/SunGod/SunGodFace");
@@ -484,7 +540,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             );
 
             Texture2D smile;
-            switch (phase)
+            switch ((int)BossPhase)
             {
                 case 0:
                     smile = mod.GetTexture("NPCs/Bosses/SunGod/SunGodSmile");
@@ -521,10 +577,10 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
         // Custom rendering //
         public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
         {
-            DrawCorona(bossPhase, spriteBatch, Color.White);
-            DrawBody(bossPhase, spriteBatch, Color.White);
+            DrawCorona(spriteBatch, Color.White);
+            DrawBody(spriteBatch, Color.White);
 
-            DrawFace(bossPhase, spriteBatch, Color.White);
+            DrawFace(spriteBatch, Color.White);
             return false;
         }
     }

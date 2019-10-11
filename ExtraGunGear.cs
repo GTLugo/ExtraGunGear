@@ -34,6 +34,12 @@ namespace ExtraGunGear
                     ItemID.Vertebrae
             });
             RecipeGroup.RegisterGroup("ExtraGunGear:EvilChunk", group);
+            group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil Accessory", new int[]
+            {
+                    ItemID.WormScarf,
+                    ItemID.BrainOfConfusion
+            });
+            RecipeGroup.RegisterGroup("ExtraGunGear:EvilAccessory", group);
         }
 
         public override void AddRecipes()
