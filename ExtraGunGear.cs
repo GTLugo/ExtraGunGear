@@ -22,24 +22,24 @@ namespace ExtraGunGear
 
         public override void AddRecipeGroups()
         {
-            RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Gold Bar", new int[]
+            RecipeGroup goldRecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Gold Bar", new int[]
             {
                     ItemID.GoldBar,
                     ItemID.PlatinumBar
             });
-            RecipeGroup.RegisterGroup("ExtraGunGear:GoldBar", group);
-            group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil Chunk", new int[]
+            RecipeGroup.RegisterGroup("ExtraGunGear:GoldBar", goldRecipeGroup);
+            RecipeGroup evilChunkRecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil Chunk", new int[]
             {
                     ItemID.RottenChunk,
                     ItemID.Vertebrae
             });
-            RecipeGroup.RegisterGroup("ExtraGunGear:EvilChunk", group);
-            group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil Accessory", new int[]
+            RecipeGroup.RegisterGroup("ExtraGunGear:EvilChunk", evilChunkRecipeGroup);
+            RecipeGroup evilAccRecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Evil Accessory", new int[]
             {
                     ItemID.WormScarf,
                     ItemID.BrainOfConfusion
             });
-            RecipeGroup.RegisterGroup("ExtraGunGear:EvilAccessory", group);
+            RecipeGroup.RegisterGroup("ExtraGunGear:EvilAccessory", evilAccRecipeGroup);
         }
 
         public override void AddRecipes()

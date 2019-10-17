@@ -73,7 +73,7 @@ namespace ExtraGunGear.Items.Accessories
         public override void AddRecipes()
         {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddRecipeGroup("ExtraGunGear:EvilAccessory", 1);
+            recipe.AddRecipeGroup("ExtraGunGear:EvilAccessory");
             recipe.AddIngredient(ItemID.CharmofMyths);
             recipe.AddIngredient(mod, "SunPowerSeed");
             recipe.AddIngredient(ItemID.FragmentVortex, 5);
