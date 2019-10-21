@@ -10,23 +10,22 @@
         "projectUniqueName": "D:\\galex\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\ExtraGunGear\\ExtraGunGear.csproj",
         "projectName": "ExtraGunGear",
         "projectPath": "D:\\galex\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\ExtraGunGear\\ExtraGunGear.csproj",
-        "packagesPath": "C:\\Users\\galex\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Gabriel Lugo\\.nuget\\packages\\",
         "outputPath": "D:\\galex\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\ExtraGunGear\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\galex\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Gabriel Lugo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net45"
+          "net48"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net45": {
+          "net48": {
             "projectReferences": {}
           }
         },
@@ -37,7 +36,9 @@
         }
       },
       "frameworks": {
-        "net45": {}
+        "net48": {
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
       }
     }
   }

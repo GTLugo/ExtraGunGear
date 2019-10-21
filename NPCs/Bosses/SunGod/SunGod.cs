@@ -20,6 +20,9 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
         private bool changingPhase;
         //private int BossPhase;
         private bool canHit;
+        private bool attackDirection;
+        Vector2 lungeVelocity;
+        private int NPCsSpawned;
 
 
         //private bool closeAttack;
@@ -123,6 +126,130 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             return BossPhase;
         }
 
+        private void AttackControl()
+        {
+            if (AttackSelection == 0f)
+            {
+                //Main.NewText("Choosing Attack...");
+                float randomF = Main.rand.NextFloat();
+                switch ((int)BossPhase)
+                {
+                    case 0:
+                        if (randomF <= 1.0f)
+                        {
+                            AttackSelection = 1;
+                            //Main.NewText("Attack = Flames");
+                        }
+                        break;
+                    case 1:
+                        if (randomF <= 0.4f)
+                        {
+                            AttackSelection = 2;
+                            attackDirection = Main.rand.NextBool();
+                            int left = (attackDirection) ? 1 : -1;
+
+                            lungeVelocity.X = 3f * left;
+                            lungeVelocity.Y = 15f;
+                        }
+                        else
+                        {
+                            AttackSelection = 1;
+                        }
+                        break;
+                    case 2:
+                        if (randomF <= (3f / 10f))
+                        {
+                            AttackSelection = 3;
+                            attackDirection = Main.rand.NextBool();
+                        }
+                        else if (randomF <= (5f / 10f))
+                        {
+                            AttackSelection = 2;
+                            attackDirection = Main.rand.NextBool();
+                            int left = (attackDirection) ? 1 : -1;
+
+                            lungeVelocity.X = 3f * left;
+                            lungeVelocity.Y = 15f;
+                        }
+                        else
+                        {
+                            AttackSelection = 1;
+                        }
+                        break;
+                    default:
+                        AttackSelection = 0;
+                        //Main.NewText("Attack = Default");
+                        break;
+                }
+                switch ((int)AttackSelection)
+                {
+                    case 1:
+                        AttackCooldown = 75f;
+                        //Main.NewText("AttackCooldown = 200");
+                        break;
+                    case 2:
+                        AttackCooldown = 150f;
+                        break;
+                    case 3:
+                        AttackCooldown = 175f;
+                        break;
+                    default:
+                        //AttackCooldown = 200f;
+                        //Main.NewText("AttackCooldown = 0");
+                        break;
+                }
+                MoveToTarget(player.Center, new Vector2(0, -200f), 8f);
+            }
+            if (AttackCooldown > 0f)
+            {
+                switch ((int)AttackSelection)
+                {
+                    case 1:
+                        //Main.NewText("Attacking...");
+                        ShootFlames();
+
+                        MoveToTarget(player.Center, new Vector2(0, -200f), 10f);
+                        //Main.NewText("Attacked");
+                        break;
+                    case 2:
+                        LungeAttack();
+
+                        // moving is just for debug //
+                        MoveToTarget(player.Center, new Vector2(0, -200f), 10f);
+                        break;
+                    case 3:
+                        NapalmRun();
+
+                        // moving is just for debug //
+                        //MoveToTarget(player.Center, new Vector2(0, -200f), 10f);
+                        break;
+                    default:
+                        //AttackCooldown = 200f;
+                        //Main.NewText("Defaulted");
+                        break;
+                }
+            }
+            else
+            {
+                //MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
+            }
+
+            --AttackCooldown;
+            if (AttackCooldown <= 0f)
+            {
+                if (NPCsSpawned < ((BossPhase + 1f) * 3f))
+                {
+                    RingFlames(3f, 15);
+                    NPC.NewNPC((int)npc.position.X, (int)npc.position.Y, mod.NPCType("SunMinion"));
+                    ++NPCsSpawned;
+                }
+
+                AttackSelection = 0f;
+                AttackCooldown = 0f;
+            }
+            npc.netUpdate = true;
+        }
+
         private void ChangePhase(int phase)
         {
             PhaseCooldown += 1f;
@@ -134,7 +261,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                     changingPhase = false;
                     npc.immortal = false;
                     BossPhase = phase;
-                    PhaseFlames();
+                    RingFlames(5f, 30);
                 }
                 else
                 {
@@ -159,17 +286,18 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                 Vector2 moveTo = target + offset;
                 Vector2 move = moveTo - npc.Center;
                 float magnitude = MagnitudeOf(move);
+                move /= magnitude;
 
-                if (magnitude > speed)
+                //if (magnitude > speed)
                 {
-                    move *= speed / magnitude;
+                    move *= speed;
                 }
                 float turnResist = 10f;
                 move = (npc.velocity * turnResist + move) / (turnResist + 1f);
                 magnitude = MagnitudeOf(move);
-                if (magnitude > speed)
+                //if (magnitude > speed)
                 {
-                    move *= speed / magnitude;
+                    //move *= speed / magnitude;
                 }
 
                 //if (noMove) move *= 0f;
@@ -178,158 +306,116 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             }
         }
 
-        private void AttackControl()
-        {
-            if (AttackSelection == 0f)
-            {
-                float randomF = Main.rand.NextFloat();
-                switch ((int)BossPhase)
-                {
-                    case 0:
-                        if (randomF >= 0.0f)
-                        {
-                            AttackSelection = 1;
-                        }
-                        break;
-                    case 1:
-                        if (randomF >= 0.5f)
-                        {
-                            AttackSelection = 2;
-                        }
-                        else
-                        {
-                            AttackSelection = 1;
-                        }
-                        break;
-                    case 2:
-                        if (randomF >= (2f / 3f))
-                        {
-                            AttackSelection = 3;
-                        }
-                        else if (randomF >= (1f / 3f))
-                        {
-                            AttackSelection = 2;
-                        }
-                        else
-                        {
-                            AttackSelection = 1;
-                        }
-                        break;
-                    default:
-                        AttackSelection = 0;
-                        break;
-                }
-                switch ((int)AttackSelection)
-                {
-                    case 1:
-                        AttackCooldown = 1f;
-                        break;
-                    case 2:
-                        AttackCooldown = 200f;
-                        break;
-                    case 3:
-                        AttackCooldown = 200f;
-                        break;
-                    default:
-                        //AttackCooldown = 200f;
-                        break;
-                }
-                MoveToTarget(player.Center, new Vector2(0, -200f), 8f);
-            }
-            else if (AttackCooldown > 0f)
-            {
-                switch ((int)AttackSelection)
-                {
-                    case 1:
-                        ShootFlames();
-                        MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
-                        break;
-                    case 2:
-                        DropBombs();
-                        //MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
-                        break;
-                    case 3:
-                        NapalmRun();
-                        //MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
-                        break;
-                    default:
-                        //AttackCooldown = 200f;
-                        break;
-                }
-            }
-            else
-            {
-                //MoveToTarget(player.Center, new Vector2(0, -200f), 6f);
-            }
-
-            --AttackCooldown;
-            if (AttackCooldown < 0f)
-            {
-                //AttackSelection = 0f;
-                AttackCooldown = 0f;
-            }
-            npc.netUpdate = true;
-        }
-
         private void ShootFlames()
         {
             if (Main.netMode != 1)
             {
-                int type = mod.ProjectileType("SunGodFlames");
-                Vector2 velocity = player.Center - npc.Center;
-                float magnitude = MagnitudeOf(velocity);
-                if (magnitude > 0)
+                if (AttackCooldown == 75f)
                 {
-                    velocity *= 12f / magnitude; // Normalizes vector and multiplies by value
-                }
-                else
-                {
-                    velocity = new Vector2(0f, 5f);
-                }
-
-                float ratio = velocity.X / (-1f * velocity.Y);
-                float normalMagn = (float)Math.Sqrt(1.0 + Math.Pow(ratio, 2.0));
-
-                Vector2 flameOffset = new Vector2(0, 0)
-                {
-                    X = 1f / normalMagn,
-                    Y = ratio / normalMagn
-                };
-
-                for (int i = -50; i <= 50; i += 10)
-                {
-                    float velocityRandomFactor = Main.rand.NextFloat(0.75f, 1.25f);
-                    Vector2 offsetVelocity = velocity * velocityRandomFactor;
-                    //for (int j = 0; j <= 5; ++j)
+                    int type = mod.ProjectileType("SunGodFlames");
+                    Vector2 velocity = player.Center - npc.Center;
+                    float magnitude = MagnitudeOf(velocity);
+                    if (magnitude > 0)
                     {
-                        Vector2 temp = new Vector2(flameOffset.X, flameOffset.Y);
-                        temp *= i;
-                        int damage = (npc.damage) / 2;
-                        Projectile.NewProjectile(new Vector2(npc.Center.X + temp.X, npc.Center.Y + temp.Y), offsetVelocity, type, damage, 0f);
+                        velocity *= 12f / magnitude; // Normalizes vector and multiplies by value
                     }
+                    else
+                    {
+                        velocity = new Vector2(0f, 5f);
+                    }
+
+                    float ratio = velocity.X / (-1f * velocity.Y);
+                    float normalMagn = (float)Math.Sqrt(1.0 + Math.Pow(ratio, 2.0));
+
+                    Vector2 flameOffset = new Vector2(0, 0)
+                    {
+                        X = 1f / normalMagn,
+                        Y = ratio / normalMagn
+                    };
+
+                    for (int i = -50; i <= 50; i += 10)
+                    {
+                        float velocityRandomFactor = Main.rand.NextFloat(0.75f, 1.25f);
+                        Vector2 offsetVelocity = velocity * velocityRandomFactor;
+                        //for (int j = 0; j <= 5; ++j)
+                        {
+                            Vector2 temp = new Vector2(flameOffset.X, flameOffset.Y);
+                            temp *= i;
+                            int damage = (npc.damage) / 2;
+                            Projectile.NewProjectile(new Vector2(npc.Center.X + temp.X, npc.Center.Y + temp.Y), offsetVelocity, type, damage, 0f);
+                        }
+                    }
+                    //Main.NewText("Sun God: Shot Flames");
+                    npc.netUpdate = true;
                 }
-                AttackCooldown = 0;
-                npc.netUpdate = true;
             }
         }
 
-        private void DropBombs()
+        private void LungeAttack()
         {
+            int right = (attackDirection) ? 1 : -1;
+            if (AttackCooldown >= 100f)
+            {
+                //if (AttackCooldown == 200f) Main.NewText("Sun God: Preparing to Drop Napalm...");
+                MoveToTarget(player.Center, new Vector2(-600f * right, -300f), 50f);
+            }
+            if (AttackCooldown < 100f && AttackCooldown >= 50f)
+            {
+                RingFlames(3f, 4);
 
+                MoveToTarget(npc.Center + lungeVelocity, new Vector2(0f, 0f), 75f);
+
+                lungeVelocity = lungeVelocity.RotatedBy((2f * Math.PI / 3f) / 25f * right * -1);
+            }
+            if (AttackCooldown < 50f && AttackCooldown >= 25f)
+            {
+                MoveToTarget(new Vector2(npc.Center.X + 600f * right, npc.Center.Y), new Vector2(0f, 0f), 50f);
+            }
+            if (AttackCooldown < 25f)
+            {
+                MoveToTarget(player.Center, new Vector2(0, -200f), 50f);
+            }
+            npc.netUpdate = true;
         }
 
         private void NapalmRun()
         {
+            int right = (attackDirection) ? 1 : -1;
+            if (AttackCooldown >= 125f)
+            {
+                //if (AttackCooldown == 200f) Main.NewText("Sun God: Preparing to Drop Napalm...");
+                MoveToTarget(player.Center, new Vector2(-600f * right, -300f), 25f);
+            }
+            if (AttackCooldown < 125f && AttackCooldown >= 50f)
+            {
+                //if (AttackCooldown == 149f) Main.NewText("Sun God: Dropping Napalm...");
+                int type = mod.ProjectileType("SunGodFlames");
+                Vector2 velocity;
+                velocity.X = 0f;
+                velocity.Y = 9f;
 
+                float velocityRandomFactor = Main.rand.NextFloat(0.75f, 1.25f);
+                Vector2 offsetVelocity = velocity * velocityRandomFactor;
+
+                for (int i = 0; i < 2; ++i)
+                    Projectile.NewProjectile(new Vector2(npc.Center.X, npc.Center.Y), offsetVelocity, type, (int)(npc.damage), 0f);
+
+                MoveToTarget(new Vector2(npc.Center.X + 600f * right, npc.Center.Y), new Vector2(0f, 0f), 20f);
+            }
+            if (AttackCooldown < 50f)
+            {
+                MoveToTarget(player.Center, new Vector2(0, -200f), 25f);
+            }
+            npc.netUpdate = true;
         }
 
-        private void PhaseFlames()
+        private void RingFlames(float size, int segments)
         {
             Vector2 velocity = player.Center - npc.Center;
             float magnitude = MagnitudeOf(velocity);
             if (magnitude > 0)
             {
-                velocity *= 5f / magnitude; // Normalizes vector and multiplies by value
+                velocity *= size / magnitude; // Normalizes vector and multiplies by value
             }
             else
             {
@@ -345,7 +431,6 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                 Y = ratio / normalMagn
             };
 
-            int segments = 30;
             for (int i = 0; i <= segments; ++i)
             {
                 float velocityRandomFactor = Main.rand.NextFloat(0.75f, 1.25f);
@@ -394,6 +479,12 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                     return;
                 }
             }
+        }
+
+        public override bool CheckDead()
+        {
+            RingFlames(5f, 30);
+            return base.CheckDead();
         }
 
         private float MagnitudeOf(Vector2 vector2)

@@ -11,7 +11,6 @@ D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Rele
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\Mono.Cecil.Pdb.dll
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\MonoMod.RuntimeDetour.dll
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\MonoMod.Utils.dll
-D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\MP3Sharp.dll
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\Newtonsoft.Json.dll
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\ReLogic.dll
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\Steamworks.NET.dll
@@ -21,7 +20,6 @@ D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Rele
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\Terraria.pdb
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\Terraria.xml
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net45\ExtraGunGear.csprojAssemblyReference.cache
-D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net45\ExtraGunGear.csproj.CoreCompileInputs.cache
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net45\ExtraGunGear.AssemblyInfoInputs.cache
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net45\ExtraGunGear.AssemblyInfo.cs
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net45\ExtraGunGear.csproj.CopyComplete
@@ -55,3 +53,5 @@ D:\DocumentsD\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\n
 D:\DocumentsD\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net45\ExtraGunGear.csproj.CopyComplete
 D:\DocumentsD\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net45\ExtraGunGear.dll
 D:\DocumentsD\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net45\ExtraGunGear.pdb
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\MP3Sharp.dll
+D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\bin\Release\net45\NVorbis.dll

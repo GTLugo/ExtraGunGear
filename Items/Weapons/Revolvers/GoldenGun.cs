@@ -8,13 +8,16 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
 {
 	public class GoldenGun : ModItem
     {
+        public static short glowMask;
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Golden Gun");
 			Tooltip.SetDefault("Right click to fire a 6-shot burst"
                 + "\nSets musket balls ablaze"
                 + "\n'The enemy can't kill if they're dead!'");
-		}
+            if (Main.netMode != NetmodeID.Server)
+                glowMask = GlowMaskAPI.Tools.instance.AddGlowMask(mod.GetTexture("Items/Weapons/Revolvers/GoldenGun_Glow"));
+        }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
@@ -49,8 +52,8 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
 		{
             item.damage = 100;
             item.ranged = true;
-            item.width = 80;
-            item.height = 36;
+            item.width = 60;
+            item.height = 26;
             item.useAnimation = 15;
             item.useTime = 15;
             item.reuseDelay = 0;
@@ -65,6 +68,7 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
             item.shootSpeed = 9f;
             item.scale = 0.65f;
             item.useAmmo = AmmoID.Bullet;
+            item.glowMask = glowMask;
         }
 
         public override bool CanUseItem(Player player)
@@ -91,7 +95,44 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
             }
             return base.CanUseItem(player);
         }
-
-
-	}
+        public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+        {
+            scale *= (2f / 3f);
+            Texture2D baseTexture = mod.GetTexture("Items/Weapons/Revolvers/GoldenGun");
+            Texture2D glowTexture = mod.GetTexture("Items/Weapons/Revolvers/GoldenGun_Glow");
+            spriteBatch.Draw
+            (
+                baseTexture,
+                new Vector2
+                (
+                    item.position.X - Main.screenPosition.X + item.width * 0.5f,
+                    item.position.Y - Main.screenPosition.Y + item.height * 0.6f
+                ),
+                new Rectangle(0, 0, baseTexture.Width, baseTexture.Height),
+                lightColor,
+                rotation,
+                baseTexture.Size() * 0.5f,
+                scale,
+                SpriteEffects.None,
+                0f
+            );
+            spriteBatch.Draw
+            (
+                glowTexture,
+                new Vector2
+                (
+                    item.position.X - Main.screenPosition.X + item.width * 0.5f,
+                    item.position.Y - Main.screenPosition.Y + item.height * 0.6f
+                ),
+                new Rectangle(0, 0, glowTexture.Width, glowTexture.Height),
+                Color.White,
+                rotation,
+                glowTexture.Size() * 0.5f,
+                scale,
+                SpriteEffects.None,
+                0f
+            );
+            return false;
+        }
+    }
 }

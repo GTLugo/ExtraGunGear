@@ -3,11 +3,24 @@
   <Import Project="..\..\references\tModLoader.targets" />
   <PropertyGroup>
     <AssemblyName>ExtraGunGear</AssemblyName>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <PlatformTarget>x86</PlatformTarget>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <Target Name="BuildMod" AfterTargets="Build">
     <Exec Command="&quot;$(tMLBuildServerPath)&quot; -build $(ProjectDir) -eac $(TargetPath) -define $(DefineConstants) -unsafe $(AllowUnsafeBlocks)" />
   </Target>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="&quot;E:\Games\Steam Library\steamapps\common\Terraria\tModLoaderServer.exe&quot; -build &quot;$(ProjectDir)&quot; -eac &quot;$(TargetPath)&quot;" />
+  </Target>
+  <ItemGroup>
+    <Compile Remove="Items\Weapons\TacticalRifle - Copy\**" />
+    <EmbeddedResource Remove="Items\Weapons\TacticalRifle - Copy\**" />
+    <None Remove="Items\Weapons\TacticalRifle - Copy\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GlowMaskAPI">
+      <HintPath>References\GlowMaskAPI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>
