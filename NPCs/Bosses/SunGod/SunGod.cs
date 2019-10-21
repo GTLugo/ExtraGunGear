@@ -469,7 +469,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             {
                 npc.TargetClosest(false);
                 player = Main.player[npc.target];
-                if(!player.active || player.dead)
+                if(!player.active || player.dead /*add check for daytime*/)
                 {
                     npc.velocity = new Vector2(0f, -10f);
                     if(npc.timeLeft > 10)

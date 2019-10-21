@@ -27,3 +27,5 @@ D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Rele
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net48\ExtraGunGear.csproj.CopyComplete
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net48\ExtraGunGear.dll
 D:\galex\Documents\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net48\ExtraGunGear.pdb
+D:\DocumentsD\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net48\ExtraGunGear.dll
+D:\DocumentsD\My Games\Terraria\ModLoader\Mod Sources\ExtraGunGear\obj\Release\net48\ExtraGunGear.pdb
