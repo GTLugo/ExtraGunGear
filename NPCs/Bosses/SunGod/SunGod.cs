@@ -61,14 +61,14 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
         {
             npc.aiStyle = -1;
             npc.rotation = 0f;
-            npc.lifeMax = 1000; //200000;
+            npc.lifeMax = 100000; //200000;
             npc.damage = 20;
             npc.defense = 50;
             npc.knockBackResist = 0f;
             npc.width = 150;
             npc.height = 150;
             npc.visualOffset = new Vector2(0, 50f);
-            npc.value = 100000;
+            npc.value = Item.buyPrice(0, 25, 0, 0);
             npc.npcSlots = 3f;
             npc.boss = true;
             npc.lavaImmune = true;
@@ -465,11 +465,11 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
 
         private void Despawn()
         {
-            if (!player.active || player.dead)
+            if (!player.active || player.dead || Main.dayTime)
             {
                 npc.TargetClosest(false);
                 player = Main.player[npc.target];
-                if(!player.active || player.dead /*add check for daytime*/)
+                if(!player.active || player.dead || Main.dayTime)
                 {
                     npc.velocity = new Vector2(0f, -10f);
                     if(npc.timeLeft > 10)
