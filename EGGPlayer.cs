@@ -23,7 +23,59 @@ namespace ExtraGunGear
 
         public const int maxSerums = 1;
         public int serums;
+        /*
+        public static readonly PlayerLayer VortexARGlow = new PlayerLayer("ExtraGunGear", "VortexARGlow", null, delegate (PlayerDrawInfo drawInfo)//layer for my glow mask
+        {
+            Player drawPlayer = drawInfo.drawPlayer;//shortcut to the player
+            if (drawPlayer.invis || drawPlayer.dead) {//if the player is invisible or dead
+                return; //don't bother with this layer
+            }
 
+            Texture2D glowTex; //container for local head texture
+            Item heldItem = drawPlayer.inventory[drawPlayer.selectedItem];
+            //your condition goes here
+            if (heldItem.modItem != null) {
+                if (heldItem.modItem.GetType() == ModContent.ItemType<Items.Weapons.AssaultRifles.VortexAR>().GetType()) {
+                    glowTex = ModContent.GetTexture("Items/Weapons/AssaultRifles/VortexAR_Glow");//reference to your texture here
+                }
+                else {
+                    return; //do nothing when I don't want a glow mask
+                }
+            }
+            
+            //else if ( ) {//if you want to draw a different glow mask
+
+            //}
+            
+            else {
+                return; //do nothing when I don't want a glow mask
+            }
+            //calculate position to draw the sprite at
+            Vector2 drawPosition = new Vector2((float)((int)(drawPlayer.position.X - Main.screenPosition.X - (float)(drawPlayer.bodyFrame.Width / 2f) + (float)(drawPlayer.width / 2f))),
+                (float)((int)(drawPlayer.position.Y - Main.screenPosition.Y + (float)drawPlayer.height - (float)drawPlayer.bodyFrame.Height + 4f + drawPlayer.gfxOffY - drawPlayer.mount.PlayerOffset)));
+            //draw the sprite
+            Main.playerDrawData.Add(new DrawData(glowTex, drawPosition + drawPlayer.bodyPosition + drawInfo.bodyOrigin,
+                drawPlayer.bodyFrame, Color.White, drawPlayer.bodyRotation, drawInfo.bodyOrigin, 1f, drawInfo.spriteEffects, 0));
+        });
+
+        public override void ModifyDrawLayers(List<PlayerLayer> layers) {
+            if (Main.gameMenu)
+                return; //don't modify the player when in the main menu
+            if (!player.active)
+                return; //don't modify the player if inactive
+                        //slot 10: social head, slot 11: social body, slot 12: social pants
+
+            //Main.NewText("BS: " + player.body + ", LS: " + player.legs);
+            for (int i = 0; i < layers.Count - 1; i++) {
+
+                if (layers[i].Name == "Arms") //insert glow layer above the arms layer
+                {
+                    layers.Insert(i, VortexARGlow);
+                    i++; //prevent infinite loop
+                }
+            }
+        }
+        */
         public override void clientClone(ModPlayer clientClone)
         {
             // Here we would make a backup clone of values that are only correct on the local players Player instance.
@@ -80,6 +132,8 @@ namespace ExtraGunGear
             }
             base.ModifyDrawInfo(ref drawInfo);
         }*/
+
+
 
         public override void PostUpdateMiscEffects()
         {
@@ -151,5 +205,7 @@ namespace ExtraGunGear
             }
             return base.Shoot(item, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
         }
+
+
     }
 }

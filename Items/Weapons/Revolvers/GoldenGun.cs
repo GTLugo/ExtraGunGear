@@ -8,15 +8,37 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
 {
 	public class GoldenGun : ModItem
     {
-        public static short glowMask;
+        //public static short glowMask;
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Golden Gun");
 			Tooltip.SetDefault("Right click to fire a 6-shot burst"
                 + "\nSets musket balls ablaze"
                 + "\n'The enemy can't kill if they're dead!'");
-            if (Main.netMode != NetmodeID.Server)
-                glowMask = GlowMaskAPI.Tools.instance.AddGlowMask(mod.GetTexture("Items/Weapons/Revolvers/GoldenGun_Glow"));
+            //if (Main.netMode != NetmodeID.Server)
+            //    glowMask = GlowMaskAPI.Tools.instance.AddGlowMask(mod.GetTexture("Items/Weapons/Revolvers/GoldenGun_Glow"));
+        }
+
+        public override void SetDefaults() {
+            item.damage = 100;
+            item.ranged = true;
+            item.width = 60;
+            item.height = 26;
+            item.useAnimation = 15;
+            item.useTime = 15;
+            item.reuseDelay = 0;
+            item.useStyle = 5;
+            item.noMelee = true;
+            item.knockBack = 3f;
+            item.value = 50000;
+            item.rare = 10;
+            item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Item, "Sounds/Item/McCree Gunshot (no reverb)");
+            item.autoReuse = false;
+            item.shoot = 10;
+            item.shootSpeed = 9f;
+            item.scale = 0.65f;
+            item.useAmmo = AmmoID.Bullet;
+            //item.glowMask = glowMask;
         }
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -47,28 +69,6 @@ namespace ExtraGunGear.Items.Weapons.Revolvers //Such namescape
         public override Vector2? HoldoutOffset()
         {
             return new Vector2(-7, 2);
-        }
-        public override void SetDefaults()
-		{
-            item.damage = 100;
-            item.ranged = true;
-            item.width = 60;
-            item.height = 26;
-            item.useAnimation = 15;
-            item.useTime = 15;
-            item.reuseDelay = 0;
-            item.useStyle = 5;
-            item.noMelee = true;
-            item.knockBack = 3f;
-            item.value = 50000;
-            item.rare = 10;
-            item.UseSound = mod.GetLegacySoundSlot(Terraria.ModLoader.SoundType.Item, "Sounds/Item/McCree Gunshot (no reverb)");
-            item.autoReuse = false;
-            item.shoot = 10;
-            item.shootSpeed = 9f;
-            item.scale = 0.65f;
-            item.useAmmo = AmmoID.Bullet;
-            item.glowMask = glowMask;
         }
 
         public override bool CanUseItem(Player player)

@@ -8,24 +8,25 @@ using Terraria;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Terraria.Utilities;
 
 namespace ExtraGunGear.NPCs.Bosses.SunGod
 {
     [AutoloadBossHead]
     public class SunGod : ModNPC
     {
-        private Player player;
-        //private float speed;
-        private float rotationCount;
-        private bool changingPhase;
-        //private int BossPhase;
-        private bool canHit;
-        private bool attackDirection;
-        Vector2 lungeVelocity;
-        private int NPCsSpawned;
+        internal static Player player;
+        //internal static float speed;
+        internal static float rotationCount;
+        internal static bool changingPhase;
+        //internal static int BossPhase;
+        internal static bool canHit;
+        internal static bool attackDirection;
+        internal static Vector2 lungeVelocity;
+        internal static int NPCsSpawned;
 
 
-        //private bool closeAttack;
+        //internal static bool closeAttack;
 
         private float BossPhase
         {   // values from 0 - 2
@@ -61,7 +62,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
         {
             npc.aiStyle = -1;
             npc.rotation = 0f;
-            npc.lifeMax = 100000; //200000;
+            npc.lifeMax = 100000; //100000;
             npc.damage = 20;
             npc.defense = 50;
             npc.knockBackResist = 0f;
@@ -78,6 +79,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             npc.HitSound = SoundID.NPCHit30;
             npc.DeathSound = SoundID.NPCDeath33;
             music = MusicID.Boss1;
+            bossBag = mod.ItemType("SunGodBag");
         }
 
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
@@ -506,6 +508,33 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
 
         public override void NPCLoot()
         {
+            if (Main.expertMode) {
+                npc.DropBossBags();
+            }
+            else {
+                if (Main.rand.NextBool(7)) {
+                    // Mask
+                    //player.QuickSpawnItem(mod.ItemType(" "));
+                }
+
+                int[] drops = {
+                    mod.ItemType("GoldenGun"),
+                    mod.ItemType("BulletBox"),
+                    mod.ItemType("BulletPouch")
+                };
+                var dropChooser = new WeightedRandom<int>();
+                for (int i = 0; i < drops.Length; ++i) {
+                    dropChooser.Add(drops[i], 1);
+                }
+                int choice = dropChooser;
+                player.QuickSpawnItem(choice);
+                dropChooser.Clear();
+                for (int i = 0; i < drops.Length; ++i) {
+                    if (drops[i] != choice) dropChooser.Add(drops[i], 1);
+                }
+                int choice2 = dropChooser;
+                player.QuickSpawnItem(choice2);
+            }
             base.NPCLoot();
         }
 
@@ -527,16 +556,16 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             switch ((int)BossPhase)
             {
                 case 0:
-                    corona = mod.GetTexture("NPCs/Bosses/SunGod/SunGodCorona");
+                    corona = mod.GetTexture("NPCs/Bosses/SunGod/Corona/SunGodCoronaRed");
                     break;
                 case 1:
-                    corona = mod.GetTexture("NPCs/Bosses/SunGod/SunGodCoronaYellow");
+                    corona = mod.GetTexture("NPCs/Bosses/SunGod/Corona/SunGodCoronaYellow");
                     break;
                 case 2:
-                    corona = mod.GetTexture("NPCs/Bosses/SunGod/SunGodCoronaBlue");
+                    corona = mod.GetTexture("NPCs/Bosses/SunGod/Corona/SunGodCoronaBlue");
                     break;
                 default:
-                    corona = mod.GetTexture("NPCs/Bosses/SunGod/SunGodCorona");
+                    corona = mod.GetTexture("NPCs/Bosses/SunGod/Corona/SunGodCoronaRed");
                     break;
             }
             spriteBatch.Draw
@@ -578,16 +607,16 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             switch ((int)BossPhase)
             {
                 case 0:
-                    body = mod.GetTexture("NPCs/Bosses/SunGod/SunGodBodyRed");
+                    body = mod.GetTexture("NPCs/Bosses/SunGod/Body/SunGodBodyRed");
                     break;
                 case 1:
-                    body = mod.GetTexture("NPCs/Bosses/SunGod/SunGodBodyYellow");
+                    body = mod.GetTexture("NPCs/Bosses/SunGod/Body/SunGodBodyYellow");
                     break;
                 case 2:
-                    body = mod.GetTexture("NPCs/Bosses/SunGod/SunGodBodyBlue");
+                    body = mod.GetTexture("NPCs/Bosses/SunGod/Body/SunGodBodyBlue");
                     break;
                 default:
-                    body = mod.GetTexture("NPCs/Bosses/SunGod/SunGodBodyYellow");
+                    body = mod.GetTexture("NPCs/Bosses/SunGod/Body/SunGodBodyRed");
                     break;
             }
 
@@ -611,8 +640,23 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
         private void DrawFace(SpriteBatch spriteBatch, Color drawColor)
         {
             Texture2D face;
-            if (!changingPhase) face = mod.GetTexture("NPCs/Bosses/SunGod/SunGodFace");
-            else face = mod.GetTexture("NPCs/Bosses/SunGod/SunGodCrossEyes");
+            if (!changingPhase) {
+                switch ((int)BossPhase) {
+                    case 0:
+                        face = mod.GetTexture("NPCs/Bosses/SunGod/Face/SunGodEyesRed");
+                        break;
+                    case 1:
+                        face = mod.GetTexture("NPCs/Bosses/SunGod/Face/SunGodEyesYellow");
+                        break;
+                    case 2:
+                        face = mod.GetTexture("NPCs/Bosses/SunGod/Face/SunGodEyesBlue");
+                        break;
+                    default:
+                        face = mod.GetTexture("NPCs/Bosses/SunGod/Face/SunGodEyesRed");
+                        break;
+                }
+            }
+            else face = mod.GetTexture("NPCs/Bosses/SunGod/Face/SunGodCrossEyes");
             spriteBatch.Draw
             (
                 face,
@@ -631,19 +675,18 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             );
 
             Texture2D smile;
-            switch ((int)BossPhase)
-            {
+            switch ((int)BossPhase) {
                 case 0:
-                    smile = mod.GetTexture("NPCs/Bosses/SunGod/SunGodSmile");
+                    smile = mod.GetTexture("NPCs/Bosses/SunGod/Face/SunGodSmileRed");
                     break;
                 case 1:
-                    smile = mod.GetTexture("NPCs/Bosses/SunGod/SunGodDisgust");
+                    smile = mod.GetTexture("NPCs/Bosses/SunGod/Face/SunGodSmileYellow");
                     break;
                 case 2:
-                    smile = mod.GetTexture("NPCs/Bosses/SunGod/SunGodGrimace");
+                    smile = mod.GetTexture("NPCs/Bosses/SunGod/Face/SunGodSmileBlue");
                     break;
                 default:
-                    smile = mod.GetTexture("NPCs/Bosses/SunGod/SunGodSmile");
+                    smile = mod.GetTexture("NPCs/Bosses/SunGod/Face/SunGodSmileRed");
                     break;
             }
             if (!changingPhase)

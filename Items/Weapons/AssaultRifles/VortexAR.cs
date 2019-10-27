@@ -17,15 +17,15 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
 {
     public class VortexAR : ModItem
     {
-        public static short glowMask;
+        //public static short glowMask;
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Vortex Pulse Rifle");
             Tooltip.SetDefault("Five round burst"
                 + "\nOnly the first shot consumes ammo"
                 + "\n'I love the smell of pulse munitions in the morning'");
-            if (Main.netMode != NetmodeID.Server)
-                glowMask = GlowMaskAPI.Tools.instance.AddGlowMask(mod.GetTexture("Items/Weapons/AssaultRifles/VortexAR_Glow"));
+            //if (Main.netMode != NetmodeID.Server)
+            //    glowMask = GlowMaskAPI.Tools.instance.AddGlowMask(mod.GetTexture("Items/Weapons/AssaultRifles/VortexAR_Glow"));
         }
 
         public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
@@ -135,7 +135,7 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
             item.useAmmo = AmmoID.Bullet;
             item.UseSound = mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/Item_31_5");
             item.scale = .85f;
-            item.glowMask = glowMask;
+            //item.glowMask = glowMask;
             //item.noUseGraphic = true;
             //item.glowMask = (short) mod.ItemType("VortexAR_Glow");
         }
