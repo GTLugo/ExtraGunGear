@@ -1,25 +1,15 @@
-using System;
 using Terraria.ID;
-using Terraria;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
 {
-    public class EndlessSilverBull : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+    public class EndlessSilverBull : ModItem {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Endless Silver Pouch");
             Tooltip.SetDefault("'Sadly these do not repell werewolves'");
         }
 
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.damage = 9;
             item.ranged = true;
             item.width = 26;
@@ -33,8 +23,7 @@ namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
             item.ammo = AmmoID.Bullet;
         }
 
-        public override void AddRecipes()
-        {
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod, "BulletPouch");
             recipe.AddIngredient(ItemID.SilverBullet, 3996);

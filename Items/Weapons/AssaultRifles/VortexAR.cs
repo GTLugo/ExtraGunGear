@@ -1,25 +1,15 @@
-using Terraria.ID;
-using Terraria;
-using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria.DataStructures;
-using Microsoft.Xna.Framework.Audio;
-using System.Threading;
-using System.Diagnostics;
+using System;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
 {
-    public class VortexAR : ModItem
-    {
+    public class VortexAR : ModItem {
         //public static short glowMask;
-        public override void SetStaticDefaults()
-        {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Vortex Pulse Rifle");
             Tooltip.SetDefault("Five round burst"
                 + "\nOnly the first shot consumes ammo"
@@ -28,8 +18,7 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
             //    glowMask = GlowMaskAPI.Tools.instance.AddGlowMask(mod.GetTexture("Items/Weapons/AssaultRifles/VortexAR_Glow"));
         }
 
-        public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
-        {
+        public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI) {
             Texture2D texture = mod.GetTexture("Items/Weapons/AssaultRifles/VortexAR_Glow");
             spriteBatch.Draw
             (
@@ -49,8 +38,7 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
             );
         }
 
-        public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
-        {/*
+        public override void PostDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale) {/*
             Texture2D texture = mod.GetTexture("Items/Weapons/AssaultRifles/VortexAR_Glow");
             spriteBatch.Draw
             (
@@ -72,18 +60,15 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
             base.PostDrawInInventory(spriteBatch, position, frame, drawColor, itemColor, origin, scale);
         }
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
             //Vector2 position2 = player.RotatedRelativePoint(new Vector2(player.itemLocation.X + 12f * player.direction + player.velocity.X, player.itemLocation.Y + 10f + player.velocity.Y), true);
             //Lighting.AddLight(position2, .5f, .7f, 1f);
             Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(1f));
             //speedX = perturbedSpeed.X;
             //speedY = perturbedSpeed.Y;
-            if (player.itemAnimation >= item.useAnimation - 2)
-            {
+            if (player.itemAnimation >= item.useAnimation - 2) {
                 int numberProjectiles = 1;    //Fires extra projectile
-                for (int i = 1; i == numberProjectiles; i++)
-                {
+                for (int i = 1; i == numberProjectiles; i++) {
                     Vector2 perturbedSpeed2 = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(5f));
                     speedX = perturbedSpeed2.X;
                     speedY = perturbedSpeed2.Y;
@@ -102,20 +87,17 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
             speedY = perturbedSpeed.Y;
             return true;
         }
-        
 
-        public override bool ConsumeAmmo(Player player)
-        {
+
+        public override bool ConsumeAmmo(Player player) {
             return !(player.itemAnimation < item.useAnimation - 2);
         }
 
-        public override Vector2? HoldoutOffset()
-        {
+        public override Vector2? HoldoutOffset() {
             return new Vector2(-7, 0);
         }
 
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.damage = 53;
             item.crit = 2;
             item.ranged = true;
@@ -140,8 +122,7 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
             //item.glowMask = (short) mod.ItemType("VortexAR_Glow");
         }
 
-        public override void AddRecipes()
-        {
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.FragmentVortex, 20);
             recipe.AddTile(TileID.LunarCraftingStation);

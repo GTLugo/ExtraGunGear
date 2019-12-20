@@ -1,25 +1,15 @@
-using System;
 using Terraria.ID;
-using Terraria;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
 {
-    public class EndlessExplodingBox : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+    public class EndlessExplodingBox : ModItem {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Endless Exploding Crate");
             Tooltip.SetDefault("*explodnbublz*"
                 + "\n'I promise it's not the crate that explodes!'");
         }
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.damage = 10;
             item.ranged = true;
             item.width = 36;
@@ -33,8 +23,7 @@ namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
             item.ammo = AmmoID.Bullet;
         }
 
-        public override void AddRecipes()
-        {
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod, "BulletBox");
             recipe.AddIngredient(ItemID.ExplosivePowder, 85);

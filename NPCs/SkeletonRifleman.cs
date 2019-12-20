@@ -1,20 +1,16 @@
-using Terraria.ID;
-using Terraria;
-using Terraria.ModLoader;
 using System;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
-namespace ExtraGunGear.NPCs
-{
-    public class SkeletonRifleman : ModNPC
-    {
-        public override void SetStaticDefaults()
-        {
+namespace ExtraGunGear.NPCs {
+    public class SkeletonRifleman : ModNPC {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Skeleton Soldier");
             Main.npcFrameCount[npc.type] = Main.npcFrameCount[NPCID.Skeleton];
         }
 
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             npc.width = 18;
             npc.height = 40;
             npc.damage = 24;
@@ -30,25 +26,20 @@ namespace ExtraGunGear.NPCs
             aiType = NPCID.Skeleton;
             animationType = NPCID.Skeleton;
         }
-        public override void NPCLoot()
-        {
+        public override void NPCLoot() {
             Random rnd = new Random();
             int dropChance = rnd.Next(0, 10);
-            if (dropChance < 1)
-            {
-            Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ChloroAR"));
+            if (dropChance < 1) {
+                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("ChloroAR"));
             }
-            if (dropChance < 0.5)
-            {
+            if (dropChance < 0.5) {
                 Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("BumpStock"));
             }
             base.NPCLoot();
         }
 
-        public override float SpawnChance(NPCSpawnInfo spawnInfo)
-        {
-            if (Terraria.NPC.downedMechBoss1 == true && Terraria.NPC.downedMechBoss2 == true && Terraria.NPC.downedMechBoss3 == true)
-            {
+        public override float SpawnChance(NPCSpawnInfo spawnInfo) {
+            if (Terraria.NPC.downedMechBoss1 == true && Terraria.NPC.downedMechBoss2 == true && Terraria.NPC.downedMechBoss3 == true) {
                 return SpawnCondition.UndergroundJungle.Chance;
             }
             else return SpawnCondition.UndergroundJungle.Chance * 0f;

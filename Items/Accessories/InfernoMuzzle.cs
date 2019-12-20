@@ -1,25 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ExtraGunGear.Items.Accessories
-{
-    public class InfernoMuzzle : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
-            Tooltip.SetDefault("Ranged attacks set enemies on fire" +
+namespace ExtraGunGear.Items.Accessories {
+    public class InfernoMuzzle : ModItem {
+        public override void SetStaticDefaults() {
+            Tooltip.SetDefault("Accelerates bullets to the speed of light" +
                 "\n12% increased ranged damage");
         }
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.width = 22;
             item.height = 30;
             item.value = 200000;
@@ -27,15 +17,14 @@ namespace ExtraGunGear.Items.Accessories
             item.accessory = true;
         }
 
-        public override void UpdateAccessory(Player player, bool hideVisual)
-        {
+        public override void UpdateAccessory(Player player, bool hideVisual) {
+            EGGPlayer modPlayer = player.GetModPlayer<EGGPlayer>();
             player.rangedDamage += 0.12f;
-            player.GetModPlayer<EGGPlayer>().hasMuzzle = true;
+            modPlayer.hasMuzzle = true;
             base.UpdateAccessory(player, hideVisual);
         }
-        
-        public override void AddRecipes()
-        {
+
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod, "MeteorMuzzle");
             recipe.AddIngredient(ItemID.RangerEmblem);

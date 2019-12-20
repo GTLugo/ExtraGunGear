@@ -1,24 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ModLoader;
 using Terraria.ID;
+using Terraria.ModLoader;
 
-namespace ExtraGunGear.Projectiles
-{
-    public class SpikeBall : ModProjectile
-    {
-        public override void SetStaticDefaults()
-        {
+namespace ExtraGunGear.Projectiles {
+    public class SpikeBall : ModProjectile {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Spike Ball");
         }
 
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             projectile.CloneDefaults(ProjectileID.RocketI);
             aiType = ProjectileID.RocketI;
             projectile.penetrate = 1;
@@ -27,20 +18,17 @@ namespace ExtraGunGear.Projectiles
             projectile.hostile = false;
         }
 
-        public override bool OnTileCollide(Vector2 velocityChange)
-        {
+        public override bool OnTileCollide(Vector2 velocityChange) {
             projectile.Kill();
             return true;
         }
 
-        public override bool PreKill(int timeLeft)
-        {
+        public override bool PreKill(int timeLeft) {
             projectile.type = ProjectileID.RocketI;
             return true;
         }
 
-        public override void AI()
-        {
+        public override void AI() {
             Player owner = Main.player[projectile.owner]; //Makes a player variable of owner set as the player using the projectile
             projectile.alpha = 0; //Semi Transparent
         }

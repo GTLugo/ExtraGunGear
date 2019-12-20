@@ -1,24 +1,14 @@
-using System;
 using Terraria.ID;
-using Terraria;
 using Terraria.ModLoader;
-using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
 {
-    public class EndlessLuminiteBox : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+    public class EndlessLuminiteBox : ModItem {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Endless Luminite Crate");
             Tooltip.SetDefault("'Taken straight from Apollo 11'");
         }
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.damage = 22;
             item.ranged = true;
             item.width = 36;
@@ -32,8 +22,7 @@ namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
             item.ammo = AmmoID.Bullet;
         }
 
-        public override void AddRecipes()
-        {
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod, "BulletBox");
             recipe.AddIngredient(ItemID.LunarBar, 6);

@@ -1,23 +1,19 @@
-using Terraria.ID;
-using Terraria;
-using Terraria.ModLoader;
-using System;
-using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
-namespace ExtraGunGear.NPCs.Bosses.SunGod
-{
-    public class SunMinion : ModNPC
-    {
+namespace ExtraGunGear.NPCs.Bosses.SunGod {
+    public class SunMinion : ModNPC {
         private float rotationCount;
 
-        public override void SetStaticDefaults()
-        {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Sun Minion");
         }
 
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             npc.width = 34;
             npc.height = 34;
             npc.damage = 24;
@@ -35,14 +31,12 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
             aiType = NPCID.Probe;
         }
 
-        public float Rotate(float angle)
-        {
+        public float Rotate(float angle) {
             rotationCount += angle;
             return (float)Math.Asin((double)Math.Sin(rotationCount)) * 2;
         }
 
-        private void DrawCorona(SpriteBatch spriteBatch, Color drawColor)
-        {
+        private void DrawCorona(SpriteBatch spriteBatch, Color drawColor) {
             Texture2D corona = mod.GetTexture("NPCs/Bosses/SunGod/SunMinionCorona");
             spriteBatch.Draw
             (
@@ -77,8 +71,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
                 0f
             );
         }
-        private void DrawBody(SpriteBatch spriteBatch, Color drawColor)
-        {
+        private void DrawBody(SpriteBatch spriteBatch, Color drawColor) {
             Texture2D body = mod.GetTexture("NPCs/Bosses/SunGod/SunMinionBody");
 
             spriteBatch.Draw
@@ -100,8 +93,7 @@ namespace ExtraGunGear.NPCs.Bosses.SunGod
         }
 
         // Custom rendering //
-        public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor)
-        {
+        public override bool PreDraw(SpriteBatch spriteBatch, Color drawColor) {
             DrawCorona(spriteBatch, Color.White);
             DrawBody(spriteBatch, Color.White);
             return false;

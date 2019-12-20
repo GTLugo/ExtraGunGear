@@ -4,19 +4,15 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ExtraGunGear.Items.Weapons.Shotguns
-{
-    class WoodSG : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+namespace ExtraGunGear.Items.Weapons.Shotguns {
+    class WoodSG : ModItem {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Pipe Shotgun");
-            Tooltip.SetDefault("Fires a spread of bullets" 
+            Tooltip.SetDefault("Fires a spread of bullets"
                 + "\n'For those who are wanderers'");
         }
 
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.damage = 11;
             item.ranged = true;
             item.width = 42;
@@ -36,16 +32,13 @@ namespace ExtraGunGear.Items.Weapons.Shotguns
             item.useAmmo = AmmoID.Bullet;
         }
 
-        public override Vector2? HoldoutOffset()
-        {
+        public override Vector2? HoldoutOffset() {
             return new Vector2(-2, 0);
         }
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
             int numberProjectiles = 2 + Main.rand.Next(2);
-            for (int i = 0; i < numberProjectiles; i++)
-            {
+            for (int i = 0; i < numberProjectiles; i++) {
                 Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(15));
                 float scale = 1f - (Main.rand.NextFloat() * .3f);
                 perturbedSpeed = perturbedSpeed * scale;
@@ -54,8 +47,7 @@ namespace ExtraGunGear.Items.Weapons.Shotguns
             return false; // return false because we don't want tmodloader to shoot projectile
         }
 
-        public override void AddRecipes()
-        {
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.CopperBar, 15);
             recipe.AddIngredient(ItemID.Wood, 3);

@@ -3,16 +3,13 @@ using Terraria.ModLoader;
 
 namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
 {
-    public class EndlessFireBull : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+    public class EndlessFireBull : ModItem {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Endless Incendiary Pouch");
             Tooltip.SetDefault("'A firebender's favorite'");
         }
 
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.damage = 8;
             item.ranged = true;
             item.width = 26;
@@ -27,8 +24,7 @@ namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
             item.ammo = AmmoID.Bullet;
         }
 
-        public override void AddRecipes()
-        {
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod, "BulletPouch");
             recipe.AddIngredient(ItemID.Torch, 400);

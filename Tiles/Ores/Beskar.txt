@@ -1,0 +1,8 @@
+Based on Platinum
+Hue/Sat:
+	-40
+	35
+	0
+Bright/Cont
+	-17
+	-18

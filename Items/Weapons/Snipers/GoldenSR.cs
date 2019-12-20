@@ -1,26 +1,18 @@
-using Terraria.ID;
-using Terraria;
-using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace ExtraGunGear.Items.Weapons.Snipers //Such namescape
 {
-    public class GoldenSR : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+    public class GoldenSR : ModItem {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Golden Sniper Rifle");
             Tooltip.SetDefault("Shoots a powerful, high velocity bullet"
                 + "\n'A reward for competitiveness'");
         }
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
             if (type == ProjectileID.Bullet)   // converts bullet to high velocity
             {
                 type = ProjectileID.BulletHighVelocity;
@@ -28,13 +20,12 @@ namespace ExtraGunGear.Items.Weapons.Snipers //Such namescape
             return true;
         }
 
-        public override Vector2? HoldoutOffset()
-        {
+        public override Vector2? HoldoutOffset() {
             return new Vector2(-7, 0);
         }
 
-        public override void SetDefaults()
-		{
+        public override void SetDefaults() {
+            //item.CloneDefaults(ItemID.SniperRifle);
             item.damage = 60;
             item.crit = 29;
             item.ranged = true;
@@ -53,7 +44,7 @@ namespace ExtraGunGear.Items.Weapons.Snipers //Such namescape
             item.shootSpeed = 16f;
             item.useAmmo = AmmoID.Bullet;
         }
-        
+
         /*
         public override bool AltFunctionUse(Player player)
         {
@@ -75,8 +66,7 @@ namespace ExtraGunGear.Items.Weapons.Snipers //Such namescape
         }
         */
 
-        public override void AddRecipes()
-        {
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddRecipeGroup("ExtraGunGear:GoldBar", 25);
             recipe.AddIngredient(ItemID.Musket, 1);

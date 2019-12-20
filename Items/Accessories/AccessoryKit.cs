@@ -1,27 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ExtraGunGear.Items.Accessories
-{
-    public class AccessoryKit : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+namespace ExtraGunGear.Items.Accessories {
+    public class AccessoryKit : ModItem {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Illegal Accessory Kit");
             Tooltip.SetDefault("Increases ranged accuracy dramatically"
             //+ "\nDecreases ranged damage by 4%"
-            + "\nRanged attacks set enemies on fire");
+            + "\nAccelerates bullets to the speed of light");
         }
-        public override void SetDefaults()
-        {
+        public override void SetDefaults() {
             item.width = 26;
             item.height = 22;
             item.value = 50000;
@@ -29,16 +19,15 @@ namespace ExtraGunGear.Items.Accessories
             item.accessory = true;
         }
 
-        public override void UpdateAccessory(Player player, bool hideVisual)
-        {
+        public override void UpdateAccessory(Player player, bool hideVisual) {
+            EGGPlayer modPlayer = player.GetModPlayer<EGGPlayer>();
             //player.rangedDamage -= 0.04f;
+            modPlayer.hasGrip = true;
+            modPlayer.hasMuzzle = true;
             base.UpdateAccessory(player, hideVisual);
-            player.GetModPlayer<EGGPlayer>().hasGrip = true;
-            player.GetModPlayer<EGGPlayer>().hasMuzzle = true;
         }
-        
-        public override void AddRecipes()
-        {
+
+        public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(mod, "VerticalGrip");
             recipe.AddIngredient(ItemID.IllegalGunParts, 1);

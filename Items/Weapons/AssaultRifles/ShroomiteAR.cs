@@ -1,44 +1,34 @@
-using Terraria.ID;
-using Terraria;
-using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
 {
-    public class ShroomiteAR : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
+    public class ShroomiteAR : ModItem {
+        public override void SetStaticDefaults() {
             DisplayName.SetDefault("Shroomite Assault Rifle");
             Tooltip.SetDefault("Four round burst"
                 + "\nOnly the first shot consumes ammo"
                 + "\n'Delicious and potent!'");
         }
 
-        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
-        {
+        public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {
             Vector2 perturbedSpeed = new Vector2(speedX, speedY).RotatedByRandom(MathHelper.ToRadians(1f));
             speedX = perturbedSpeed.X;
             speedY = perturbedSpeed.Y;
             return true;
         }
 
-        public override bool ConsumeAmmo(Player player)
-        {
+        public override bool ConsumeAmmo(Player player) {
             return !(player.itemAnimation < item.useAnimation - 2);
         }
 
-        public override Vector2? HoldoutOffset()
-        {
+        public override Vector2? HoldoutOffset() {
             return new Vector2(-7, 0);
         }
 
-        public override void SetDefaults()
-		{
+        public override void SetDefaults() {
             item.damage = 36;
             item.crit = 6;
             item.ranged = true;
@@ -61,15 +51,14 @@ namespace ExtraGunGear.Items.Weapons.AssaultRifles //Such namescape
         }
 
 
-        public override void AddRecipes()
-		{
-			ModRecipe recipe = new ModRecipe(mod);
+        public override void AddRecipes() {
+            ModRecipe recipe = new ModRecipe(mod);
             //recipe.AddIngredient(mod, "ChloroAR");
             recipe.AddIngredient(ItemID.ShroomiteBar, 35);
             recipe.AddIngredient(ItemID.SoulofMight, 15);
             recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
+            recipe.SetResult(this);
             recipe.AddRecipe();
         }
-	}
+    }
 }
