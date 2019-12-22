@@ -21,7 +21,7 @@ namespace ExtraGunGear.Items {
             item.useAnimation = 15;
             item.useTime = 10;
             item.useStyle = 1;
-            item.createTile = 4;
+            item.createTile = TileID.Torches;
             item.tileWand = AmmoID.Gel;
             item.consumable = false;
             item.rare = 4;
@@ -53,8 +53,7 @@ namespace ExtraGunGear.Items {
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.Wood, 200);
-            recipe.anyWood = true;
+            recipe.AddRecipeGroup("Wood", 200);
             recipe.AddIngredient(ItemID.Gel, 300);
             recipe.AddIngredient(ItemID.SoulofLight, 5);
             recipe.AddTile(TileID.Anvils);

@@ -9,7 +9,7 @@ namespace ExtraGunGear.Items.Weapons.Ammo {
         }
 
         public override void SetDefaults() {
-            item.damage = 4;
+            item.damage = 3;
             item.ranged = true;
             item.width = 8;
             item.height = 8;

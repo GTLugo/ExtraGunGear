@@ -152,7 +152,7 @@ namespace ExtraGunGear {
                     dustColor = Color.LawnGreen;
                     break;
                 case 3:
-                    dustColor = Color.Blue;
+                    dustColor = Color.CornflowerBlue;
                     break;
                 case 4:
                     dustColor = Color.Goldenrod;

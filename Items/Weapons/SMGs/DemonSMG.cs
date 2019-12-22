@@ -24,7 +24,7 @@ namespace ExtraGunGear.Items.Weapons.SMGs //Such namescape
         }
 
         public override Vector2? HoldoutOffset() {
-            return new Vector2(-7, 8);
+            return new Vector2(-7, 4);
         }
 
         public override void SetDefaults() {

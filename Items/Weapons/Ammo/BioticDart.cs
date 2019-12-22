@@ -16,7 +16,7 @@ namespace ExtraGunGear.Items.Weapons.Ammo {
             item.maxStack = 999;
             item.value = 76000;
             item.rare = 6;
-            item.damage = 2;
+            item.damage = 1;
             item.knockBack = 0f;
             item.shoot = mod.ProjectileType("BioticDart");
             item.shootSpeed = 8f;

@@ -8,6 +8,7 @@ namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
             DisplayName.SetDefault("Endless Biotic Crate");
             Tooltip.SetDefault("'pew pew pew'" + "\n[UNIMPLEMENTED]");
         }
+
         public override void SetDefaults() {
             item.ranged = true;
             item.width = 36;
@@ -15,7 +16,7 @@ namespace ExtraGunGear.Items.Weapons.Ammo //Such namescape
             item.maxStack = 1;
             item.value = 76000;
             item.rare = 6;
-            item.damage = 2;
+            item.damage = 1;
             item.knockBack = 0f;
             item.shoot = mod.ProjectileType("BioticDart");
             item.shootSpeed = 8f;

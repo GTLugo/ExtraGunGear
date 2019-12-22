@@ -118,7 +118,7 @@ namespace ExtraGunGear {
                     //.WarnFormat("ExtraGunGear: Unknown Message type: {0}", msgType);
                     break;
             }
-            ModNetHandler.HandlePacket(reader, whoAmI);
+            //ModNetHandler.HandlePacket(reader, whoAmI);
         }
     }
 

@@ -14,13 +14,13 @@
     <Exec Command="&quot;E:\Games\Steam Library\steamapps\common\Terraria\tModLoaderServer.exe&quot; -build &quot;$(ProjectDir)&quot; -eac &quot;$(TargetPath)&quot;" />
   </Target>
   <ItemGroup>
+	  <Reference Include="Microsoft.Xna.Framework" />
+	  <Reference Include="Microsoft.Xna.Framework.Game" />
+	  <Reference Include="Microsoft.Xna.Framework.Graphics" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Remove="Items\Weapons\TacticalRifle - Copy\**" />
     <EmbeddedResource Remove="Items\Weapons\TacticalRifle - Copy\**" />
     <None Remove="Items\Weapons\TacticalRifle - Copy\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="GlowMaskAPI">
-      <HintPath>References\GlowMaskAPI.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>
