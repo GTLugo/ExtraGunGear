@@ -16,7 +16,7 @@ namespace ExtraGunGear.Projectiles {
             projectile.penetrate = 1;
             projectile.timeLeft = (60 * 10);
             projectile.friendly = true;
-            projectile.hostile = false;
+            projectile.hostile = true;
             aiType = ProjectileID.Bullet;
         }
         public override bool PreKill(int timeLeft) {

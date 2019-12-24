@@ -14,6 +14,7 @@ namespace ExtraGunGear.Items.Accessories.Symbiote {
             Tooltip.SetDefault("Covers the host in a symbiote"/* and turns them into a merfolk when entering water"*/ +
                 "\nIncreases to all stats" + 
                 "\nDramatically increased life regeneration" +
+                "\nGrants spider powers and ability to dodge attacks" +
                 "\n+8 defense");
         }
         public override void SetDefaults() {
@@ -24,15 +25,24 @@ namespace ExtraGunGear.Items.Accessories.Symbiote {
             item.rare = 10;
         }
 
+        public override void ArmorSetShadows(Player player) {
+            base.ArmorSetShadows(player);
+            player.armorEffectDrawShadow = true;
+        }
+
         public override void UpdateAccessory(Player player, bool hideVisual) {
             EGGPlayer modPlayer = player.GetModPlayer<EGGPlayer>();
             modPlayer.hasSymbiote = true;
+            player.blackBelt = true;
+            player.dash = 1;
+            player.spikedBoots = 2;
             if (hideVisual) modPlayer.symbioteHideVanity = true;
         }
 
         public override void AddRecipes() {
             ModRecipe recipe = new ModRecipe(mod);
             recipe.AddIngredient(ItemID.CelestialShell);
+            recipe.AddIngredient(ItemID.MasterNinjaGear);
             recipe.AddIngredient(ItemID.LunarBar, 3);
             recipe.AddIngredient(ItemID.FragmentStardust, 3);
             recipe.AddIngredient(ItemID.Gel, 15);

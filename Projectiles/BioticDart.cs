@@ -29,7 +29,7 @@ namespace ExtraGunGear.Projectiles {
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) {
             Player owner = Main.player[projectile.owner];
-            int healingAmount = 5;
+            int healingAmount = 2;
             owner.statLife += healingAmount;
             owner.HealEffect(healingAmount, true);
         }

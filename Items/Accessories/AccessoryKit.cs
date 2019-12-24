@@ -15,7 +15,7 @@ namespace ExtraGunGear.Items.Accessories {
             item.width = 26;
             item.height = 22;
             item.value = 50000;
-            item.rare = 3;
+            item.rare = 8;
             item.accessory = true;
         }
 
