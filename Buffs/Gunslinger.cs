@@ -7,10 +7,10 @@ using Terraria;
 using Terraria.ModLoader;
 
 namespace ExtraGunGear.Buffs {
-    class Symbiote : ModBuff {
+    class Gunslinger : ModBuff {
         public override void SetDefaults() {
-            DisplayName.SetDefault("Symbiote");
-            Description.SetDefault("We are Venom!");
+            DisplayName.SetDefault("Gunslinger");
+            Description.SetDefault("20% increased bullet damage");
             Main.debuff[Type] = true;
             Main.buffNoSave[Type] = true;
             Main.buffNoTimeDisplay[Type] = true;
@@ -31,13 +31,7 @@ namespace ExtraGunGear.Buffs {
                 player.meleeCrit += 3;
                 player.rangedDamage += 0.2f;
                 player.rangedCrit += 3;
-                player.magicDamage += 0.2f;
-                player.magicCrit += 3;
-                player.pickSpeed -= 0.2f;
-                player.minionDamage += 0.2f;
-                player.minionKB += 0.75f;
-                player.thrownDamage += 0.2f;
-                player.thrownCrit += 3;
+
             }
             else {
                 player.DelBuff(buffIndex);
