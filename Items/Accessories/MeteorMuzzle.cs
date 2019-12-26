@@ -10,6 +10,7 @@ namespace ExtraGunGear.Items.Accessories {
                 "\nBullets burn struck enemies" +
                 "\n'Zoom!'");
         }
+
         public override void SetDefaults() {
             item.width = 22;
             item.height = 30;
