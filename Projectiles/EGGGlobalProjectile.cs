@@ -1,5 +1,4 @@
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
@@ -97,7 +96,7 @@ namespace ExtraGunGear {
                 if (Main.myPlayer == projectile.owner) {
                     Vector2 cursor = (Main.MouseWorld - owner.Center).SafeNormalize(Vector2.UnitX);
                     Vector2 projVelocity = cursor * projectile.velocity.Length();
-                    if (modPlayer.hasGrip && (projectile.timeLeft == 600)) //Test for grip and test that the bullet just spawned
+                    if (modPlayer.hasGrip && (projectile.timeLeft == 600) && modPlayer.gripEnabled) //Test for grip and test that the bullet just spawned
                     {
                         //float angle = projectile.velocity.ToRotation().AngleTowards(projVelocity.ToRotation(), 30);
                         //if (projectile.velocity.ToRotation() > projVelocity.RotatedBy(Math.PI / 12).ToRotation())/*projectile velocity rotation is greater than threshold*/{
@@ -109,10 +108,9 @@ namespace ExtraGunGear {
                     }
                 }
 
-                if (modPlayer.hasMuzzle || modPlayer.hasMag) //Test for muzzle and ranged projectile
+                if ((modPlayer.hasMuzzle || modPlayer.hasMag) && modPlayer.muzzleEnabled) //Test for muzzle and ranged projectile
                 {
-                    if (bulletTypes.Contains(projectile.type)) 
-                    {
+                    if (bulletTypes.Contains(projectile.type)) {
                         projectile.extraUpdates = 100;
                         projectile.alpha = 255;
                         HitscanBeamAI(projectile);

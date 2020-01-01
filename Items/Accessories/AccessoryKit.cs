@@ -9,8 +9,10 @@ namespace ExtraGunGear.Items.Accessories {
             DisplayName.SetDefault("Illegal Accessory Kit");
             Tooltip.SetDefault("Increases ranged accuracy dramatically"
             //+ "\nDecreases ranged damage by 4%"
-            + "\nAccelerates bullets to the speed of light");
+            + "\nBullets instantly hit their targets"
+            + "\n(Visibility toggles bullet acceleration and accuracy)");
         }
+
         public override void SetDefaults() {
             item.width = 26;
             item.height = 22;
@@ -24,6 +26,10 @@ namespace ExtraGunGear.Items.Accessories {
             //player.rangedDamage -= 0.04f;
             modPlayer.hasGrip = true;
             modPlayer.hasMuzzle = true;
+            if (!hideVisual) {
+                modPlayer.gripEnabled = true;
+                modPlayer.muzzleEnabled = true;
+            }
             base.UpdateAccessory(player, hideVisual);
         }
 

@@ -1,5 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-
+﻿
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,6 +17,15 @@ namespace ExtraGunGear {
             }
 
             return base.CanUseItem(item, player);
+        }
+
+        public override void PickAmmo(Item weapon, Item ammo, Player player, ref int type, ref float speed, ref int damage, ref float knockback) {
+            EGGPlayer modPlayer = player.GetModPlayer<EGGPlayer>();
+            if (weapon.useAmmo == AmmoID.Bullet && modPlayer.gunslingerBuff) {
+                knockback = (int)((double)((float)knockback) * 1.2f);
+                damage = (int)((double)((float)damage) * 1.2f);
+            }
+            base.PickAmmo(weapon, ammo, player, ref type, ref speed, ref damage, ref knockback);
         }
 
         //public override bool Shoot(Item item, Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack) {

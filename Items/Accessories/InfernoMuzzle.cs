@@ -6,8 +6,9 @@ using Terraria.ModLoader;
 namespace ExtraGunGear.Items.Accessories {
     public class InfernoMuzzle : ModItem {
         public override void SetStaticDefaults() {
-            Tooltip.SetDefault("Accelerates bullets to the speed of light" +
-                "\n12% increased ranged damage");
+            Tooltip.SetDefault("Bullets instantly hit their targets" +
+                "\n12% increased ranged damage" + 
+                "\n(Visibility toggles bullet acceleration)");
         }
         public override void SetDefaults() {
             item.width = 22;
@@ -21,6 +22,9 @@ namespace ExtraGunGear.Items.Accessories {
             EGGPlayer modPlayer = player.GetModPlayer<EGGPlayer>();
             player.rangedDamage += 0.12f;
             modPlayer.hasMuzzle = true;
+            if (!hideVisual) {
+                modPlayer.muzzleEnabled = true;
+            }
             base.UpdateAccessory(player, hideVisual);
         }
 

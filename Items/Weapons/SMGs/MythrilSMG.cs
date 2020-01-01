@@ -39,7 +39,7 @@ namespace ExtraGunGear.Items.Weapons.SMGs //Such namescape
             item.noMelee = true;
             item.knockBack = 4;
             item.value = 165000;
-            item.rare = 3;
+            item.rare = 4;
             item.UseSound = SoundID.Item40;//mod.GetLegacySoundSlot(SoundType.Item, "Sounds/Item/Item_31_4");
             item.autoReuse = true;
             item.shoot = 10;

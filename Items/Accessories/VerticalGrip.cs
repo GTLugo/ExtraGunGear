@@ -8,6 +8,7 @@ namespace ExtraGunGear.Items.Accessories {
         public override void SetStaticDefaults() {
             Tooltip.SetDefault("Increases ranged accuracy dramatically"
             //+ "\nDecreases ranged damage by 10%"
+            + "\n(Visibility toggles bullet accuracy)"
             );
         }
         public override void SetDefaults() {
@@ -19,9 +20,13 @@ namespace ExtraGunGear.Items.Accessories {
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual) {
+            EGGPlayer modPlayer = player.GetModPlayer<EGGPlayer>();
             //player.rangedDamage -= 0.10f;
             base.UpdateAccessory(player, hideVisual);
-            player.GetModPlayer<EGGPlayer>().hasGrip = true;
+            modPlayer.hasGrip = true;
+            if (!hideVisual) {
+                modPlayer.gripEnabled = true;
+            }
         }
 
         public override void AddRecipes() {

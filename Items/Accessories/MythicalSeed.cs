@@ -35,12 +35,6 @@ namespace ExtraGunGear.Items.Accessories {
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.SetResult(this);
             recipe.AddRecipe();
-            recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.CharmofMyths);
-            recipe.AddIngredient(mod, "SunPowerSeed");
-            recipe.AddTile(TileID.TinkerersWorkbench);
-            recipe.SetResult(this);
-            recipe.AddRecipe();
 
         }
     }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -12,7 +7,7 @@ namespace ExtraGunGear.Items.Accessories.Symbiote {
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("V-252");
             Tooltip.SetDefault("Covers the host in a symbiote"/* and turns them into a merfolk when entering water"*/ +
-                "\nIncreases to all stats" + 
+                "\nIncreases to all stats" +
                 "\nDramatically increased life regeneration" +
                 "\nGrants spider powers and ability to dodge attacks" +
                 "\n+8 defense");

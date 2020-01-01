@@ -37,13 +37,13 @@ namespace ExtraGunGear {
             if (bossChecklist != null) {
                 bossChecklist.Call(
                     "AddBoss",
-                    12.5f, 
-                    ModContent.NPCType<NPCs.Bosses.SunGod.SunGod>(), 
-                    this, 
-                    "Sun God", 
-                    (Func<bool>)(() => EGGWorld.downedSunGod), 
+                    12.5f,
+                    ModContent.NPCType<NPCs.Bosses.SunGod.SunGod>(),
+                    this,
+                    "Sun God",
+                    (Func<bool>)(() => EGGWorld.downedSunGod),
                     ModContent.ItemType<Items.MayanCalendar>(),
-                    new List<int>() { 
+                    new List<int>() {
 
                     },
                     new List<int>(){
@@ -51,9 +51,9 @@ namespace ExtraGunGear {
                         ModContent.ItemType<Items.Accessories.SunPowerSeed>(),
                         ModContent.ItemType<Items.Materials.Beskar.BeskarBar>(),
                         ModContent.ItemType<Items.Materials.Beskar.BeskarOre>()
-                    }, 
-                    "Craft a Mayan calendar at the Lihzahrd Altar and use it at night to summon the Sun God", 
-                    "The Sun God reigns supreme", 
+                    },
+                    "Craft a Mayan calendar at the Lihzahrd Altar and use it at night to summon the Sun God",
+                    "The Sun God reigns supreme",
                     "ExtraGunGear/NPCs/Bosses/SunGod/SunGod2",
                     "ExtraGunGear/NPCs/Bosses/SunGod/SunGod_Head_Boss"
                 );
@@ -109,9 +109,9 @@ namespace ExtraGunGear {
                 // This message syncs ExamplePlayer.exampleLifeFruits
                 case EGGModMessageType.EGGPlayerSyncPlayer:
                     byte playernumber = reader.ReadByte();
-                    EGGPlayer eggPlayer = Main.player[playernumber].GetModPlayer<EGGPlayer>();
+                    EGGPlayer modPlayer = Main.player[playernumber].GetModPlayer<EGGPlayer>();
                     int serums = reader.ReadInt32();
-                    eggPlayer.serums = serums;
+                    modPlayer.serums = serums;
                     // SyncPlayer will be called automatically, so there is no need to forward this data to other clients.
                     break;
                 default:

@@ -31,7 +31,7 @@ namespace ExtraGunGear.Items {
 
         public override void PostUpdate() {
             //if (!item.wet) {
-                Lighting.AddLight((int)((item.position.X + item.width / 2) / 16f), (int)((item.position.Y + item.height / 2) / 16f), 1.3f, 1.2f, 1f);
+            Lighting.AddLight((int)((item.position.X + item.width / 2) / 16f), (int)((item.position.Y + item.height / 2) / 16f), 1.3f, 1.2f, 1f);
             //}
         }
 

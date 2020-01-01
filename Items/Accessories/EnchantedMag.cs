@@ -1,5 +1,3 @@
-
-using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -11,8 +9,9 @@ namespace ExtraGunGear.Items.Accessories {
             Tooltip.SetDefault("12% increased ranged damage and critical strike chance"
             + "\nIncreased ranged accuracy"
             + "\n30% chance not to consume ammo"
-            + "\nAccelerates bullets to the speed of light"
-            + "\nRanged attacks inflict Shadowflame");
+            + "\nBullets instantly hit their targets"
+            + "\nRanged attacks inflict Shadowflame"
+            + "\n(Visibility toggles bullet acceleration and accuracy)");
         }
         public override void SetDefaults() {
             item.width = 26;
@@ -24,12 +23,16 @@ namespace ExtraGunGear.Items.Accessories {
 
         public override void UpdateAccessory(Player player, bool hideVisual) {
             EGGPlayer modPlayer = player.GetModPlayer<EGGPlayer>();
-            
+
             player.rangedDamage += 0.12f;
             player.rangedCrit += 12;
             //modPlayer.hasMuzzle = true; //Not required anymore
             modPlayer.hasGrip = true;
             modPlayer.hasMag = true;
+            if (!hideVisual) {
+                modPlayer.gripEnabled = true;
+                modPlayer.muzzleEnabled = true;
+            }
             base.UpdateAccessory(player, hideVisual);
         }
 

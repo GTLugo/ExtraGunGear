@@ -20,7 +20,7 @@ namespace ExtraGunGear.Items.Accessories.ArcReactor {
         public override void SetDefaults() {
             item.width = 28;
             item.height = 28;
-            item.value = Item.sellPrice(0,12,25,0);
+            item.value = Item.sellPrice(0, 12, 25, 0);
             item.rare = 9;
             //item.expert = true;
             item.accessory = true;

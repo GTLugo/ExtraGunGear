@@ -6,8 +6,9 @@ using Terraria.ModLoader;
 namespace ExtraGunGear.Items.Accessories {
     public class MeteorMuzzle : ModItem {
         public override void SetStaticDefaults() {
-            Tooltip.SetDefault("Accelerates bullets to the speed of light" +
+            Tooltip.SetDefault("Bullets instantly hit their targets" +
                 "\nBullets burn struck enemies" +
+                "\n(Visibility toggles bullet acceleration)" +
                 "\n'Zoom!'");
         }
 
@@ -23,6 +24,9 @@ namespace ExtraGunGear.Items.Accessories {
             //player.bulletDamage *= 1.10f;
             EGGPlayer modPlayer = player.GetModPlayer<EGGPlayer>();
             modPlayer.hasMuzzle = true;
+            if (!hideVisual) {
+                modPlayer.muzzleEnabled = true;
+            }
             base.UpdateAccessory(player, hideVisual);
         }
 

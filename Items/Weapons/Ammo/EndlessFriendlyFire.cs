@@ -5,7 +5,7 @@ namespace ExtraGunGear.Items.Weapons.Ammo {
     class EndlessFriendlyFire : ModItem {
         public override void SetStaticDefaults() {
             DisplayName.SetDefault("Endless Friendly Fire Rounds");
-            Tooltip.SetDefault("Harms townspeople and yourself" + 
+            Tooltip.SetDefault("Harms townspeople and yourself" +
                 "\n'Pure evil...'");
         }
 

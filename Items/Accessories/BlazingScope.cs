@@ -8,8 +8,9 @@ namespace ExtraGunGear.Items.Accessories {
         public override void SetStaticDefaults() {
             Tooltip.SetDefault("Ranged attacks set enemies on fire"
                 + "\n12% increased ranged damage and critical strike chance"
-                + "\nIncreases view range for ranged weapons"
-                + "\nwhen accessory is visible (Right click to zoom out)");
+                + "\nIncreases view range for ranged weapons (Right click to zoom out)"
+                + "\nBullets instantly hit their targets"
+                + "\n(Visibility toggles bullet acceleration)");
         }
         public override void SetDefaults() {
             item.width = 22;
@@ -23,10 +24,10 @@ namespace ExtraGunGear.Items.Accessories {
             EGGPlayer modPlayer = player.GetModPlayer<EGGPlayer>();
             player.rangedDamage += 0.12f;
             player.rangedCrit += 12;
-            if (player.HeldItem.ranged && !hideVisual) {
-                player.scope = true;
-            }
             modPlayer.hasMuzzle = true;
+            if (!hideVisual) {
+                modPlayer.muzzleEnabled = true;
+            }
         }
 
         public override void AddRecipes() {

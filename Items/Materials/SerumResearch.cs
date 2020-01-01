@@ -14,7 +14,7 @@ namespace ExtraGunGear.Items.Materials {
             item.maxStack = 1;
             item.width = 32;
             item.height = 34;
-            item.value = Item.sellPrice(1,0,0,0);
+            item.value = Item.sellPrice(1, 0, 0, 0);
             item.rare = -12;
             item.expert = true;
         }

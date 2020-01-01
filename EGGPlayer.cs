@@ -8,7 +8,9 @@ using Terraria.ModLoader.IO;
 namespace ExtraGunGear {
     public class EGGPlayer : ModPlayer {
         public bool hasMuzzle;
+        public bool muzzleEnabled;
         public bool hasGrip;
+        public bool gripEnabled;
         public bool hasStock;
         public bool hasAmp;
         public bool hasSeed;
@@ -21,6 +23,8 @@ namespace ExtraGunGear {
         public bool symbioteBuff;
         public bool symbioteHideVanity;
         public bool symbioteForceVanity;
+
+        public bool gunslingerBuff;
 
         public const int maxSerums = 1;
         public int serums;
@@ -122,13 +126,17 @@ namespace ExtraGunGear {
 
         public override void ResetEffects() {
             hasMuzzle = false;
+            muzzleEnabled = false;
             hasGrip = false;
+            gripEnabled = false;
             hasStock = false;
             hasAmp = false;
             hasSeed = false;
             hasMSeed = false;
             hasMag = false;
             hasBeskarBreast = false;
+
+            gunslingerBuff = false;
 
             hasSymbiotePrev = hasSymbiote; // previous state of hasSymbiote (for consistency because of order of hooks)
             hasSymbiote = false;
@@ -138,23 +146,23 @@ namespace ExtraGunGear {
 
             // Super Soldier Serum effects: //
             if (player.GetModPlayer<EGGPlayer>().serums > 0) {
-                player.statLifeMax2     += serums * 100;
-                player.moveSpeed        += serums * 0.1f;
-                player.jumpSpeedBoost   += serums * 1.2f;
-                player.lifeRegen        += serums * 2;
-                player.statDefense      += serums * 4;
-                player.meleeSpeed       += serums * 0.1f;
-                player.meleeDamage      += serums * 0.1f;
-                player.meleeCrit        += serums * 2;
-                player.rangedDamage     += serums * 0.1f;
-                player.rangedCrit       += serums * 2;
-                player.magicDamage      += serums * 0.1f;
-                player.magicCrit        += serums * 2;
-                player.pickSpeed        -= serums * 0.15f;
-                player.minionDamage     += serums * 0.1f;
-                player.minionKB         += serums * 0.5f;
-                player.thrownDamage     += serums * 0.1f;
-                player.thrownCrit       += serums * 2;
+                player.statLifeMax2 += serums * 100;
+                player.moveSpeed += serums * 0.1f;
+                player.jumpSpeedBoost += serums * 1.2f;
+                player.lifeRegen += serums * 2;
+                player.statDefense += serums * 4;
+                player.meleeSpeed += serums * 0.1f;
+                player.meleeDamage += serums * 0.1f;
+                player.meleeCrit += serums * 2;
+                player.rangedDamage += serums * 0.1f;
+                player.rangedCrit += serums * 2;
+                player.magicDamage += serums * 0.1f;
+                player.magicCrit += serums * 2;
+                player.pickSpeed -= serums * 0.15f;
+                player.minionDamage += serums * 0.1f;
+                player.minionKB += serums * 0.5f;
+                player.thrownDamage += serums * 0.1f;
+                player.thrownCrit += serums * 2;
             }
             //if (player.GetModPlayer<EGGPlayer>().symbioteBuff) {
             //}
