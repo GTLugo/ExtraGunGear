@@ -1,0 +1,176 @@
+
+// ExtraGunGear.Commons
+
+
+Common.Tooltip1=5% increased ranged damage
+// {$Mods.ExtraGunGear.Common.Tooltip1} x2
+
+Common.Tooltip2=Increases ranged accuracy dramatically
+// {$Mods.ExtraGunGear.Common.Tooltip2} x2
+
+Common.Tooltip3=Ranged attacks set enemies on fire
+// {$Mods.ExtraGunGear.Common.Tooltip3} x4
+
+Common.Tooltip4=Four round burst
+// {$Mods.ExtraGunGear.Common.Tooltip4} x4
+
+Common.Tooltip5=Only the first shot consumes ammo
+// {$Mods.ExtraGunGear.Common.Tooltip5} x8
+
+Common.Tooltip6=Shoots a powerful, high velocity bullet
+// {$Mods.ExtraGunGear.Common.Tooltip6} x2
+
+Common.Tooltip7=Two shot burst
+// {$Mods.ExtraGunGear.Common.Tooltip7} x2
+
+Common.=Tooltip8='Simple, yet effective'
+// {$Mods.ExtraGunGear.Common.Tooltip8}
+
+
+// ExtraGunGear.Items.Armor
+
+
+ItemName.OutlawHat=OutlawHat
+ItemTooltip.OutlawHat={$Mods.ExtraGunGear.Common.Tooltip1}
+
+ItemName.OutlawJacket=OutlawJacket
+ItemTooltip.OutlawJacket=5% increased damage resistance
+
+ItemName.OutlawPants=OutlawPants
+ItemTooltip.OutlawPants={$Mods.ExtraGunGear.Common.Tooltip1}
+
+ItemName.TacGog=Recon Visor
+ItemTooltip.TacGog=Allows the user to see enemies through walls\n'No one can hide from my sight'
+
+
+// ExtraGunGear.Items
+
+
+ItemName.AccessoryKit=Illegal Accessory Kit
+ItemTooltip.AccessoryKit={$Mods.ExtraGunGear.Common.Tooltip2}\n{$Mods.ExtraGunGear.Common.Tooltip3}
+
+ItemName.BlazingScope=BlazingScope
+ItemTooltip.BlazingScope={$Mods.ExtraGunGear.Common.Tooltip3}\n15% increased ranged damage and critical strike chance\nIncreases view range for ranged weapons (Right click to zoom out)
+
+ItemName.BulletBox=Ammunition Crate
+ItemTooltip.BulletBox=Mystical energy swarms around this crate
+
+ItemName.BulletPouch=Advanced Bullet Pouch
+ItemTooltip.BulletPouch=Mystical energy swarms around this pouch
+
+ItemName.InfernoMuzzle=InfernoMuzzle
+ItemTooltip.InfernoMuzzle={$Mods.ExtraGunGear.Common.Tooltip3}\n12% increased ranged damage
+
+ItemName.LargeTorch=Giant Torch
+ItemTooltip.LargeTorch=Creates torches at the cost of gel\n'Unlimited torch power! Itty bitty inventory space.'
+
+ItemName.MeteorMuzzle=MeteorMuzzle
+ItemTooltip.MeteorMuzzle={$Mods.ExtraGunGear.Common.Tooltip3}
+
+ItemName.VerticalGrip=VerticalGrip
+ItemTooltip.VerticalGrip={$Mods.ExtraGunGear.Common.Tooltip2}
+
+
+// ExtraGunGear.Items.Weapons
+
+
+ItemName.AdamantiteAR=Big Ben
+ItemTooltip.AdamantiteAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}
+
+ItemName.ChloroAR=Pitcher's Pitfall
+ItemTooltip.ChloroAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\nOccassionally fires an additional explosive flower\n{$Mods.ExtraGunGear.Common.Tooltip6}
+
+ItemName.DoubleBarrelMusket=Double Barrel Musket
+ItemTooltip.DoubleBarrelMusket={$Mods.ExtraGunGear.Common.Tooltip7}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'Almost twice the firepower...'
+
+ItemName.EndlessChloroBull=Endless Chlorophyte Pouch
+ItemTooltip.EndlessChloroBull='I've got you in my sights!'
+
+ItemName.EndlessCrystalBull=Endless Crystal Pouch
+ItemTooltip.EndlessCrystalBull='Simple Geometry'
+
+ItemName.EndlessCursedBull=Endless Cursed Pouch
+ItemTooltip.EndlessCursedBull='I curse the man who made these...'
+
+ItemName.EndlessExplodingBox=Endless Exploding Crate
+ItemTooltip.EndlessExplodingBox=*explodnbublz*\n'I promise it's not the crate that explodes!'
+
+ItemName.EndlessFireBull=Endless Incendiary Pouch
+ItemTooltip.EndlessFireBull='A firebender's favorite'
+
+ItemName.EndlessGoldBox=Endless Golden Crate
+ItemTooltip.EndlessGoldBox='Not worth as much as you would think'
+
+ItemName.EndlessHighVBox=Endless High Velocity Crate
+ItemTooltip.EndlessHighVBox='For those who want to be MLG PR0 3L1T3'
+
+ItemName.EndlessIchorBull=Endless Ichor Pouch
+ItemTooltip.EndlessIchorBull='Don't eat the yellow bullets...'
+
+ItemName.EndlessLuminiteBox=Endless Luminite Crate
+ItemTooltip.EndlessLuminiteBox='Taken straight from Apollo 11'
+
+ItemName.EndlessMeteorBull=Endless Meteor Pouch
+ItemTooltip.EndlessMeteorBull='NASA would kill for one of these'
+
+ItemName.EndlessNanoBox=Endless Nano Hard Drive
+ItemTooltip.EndlessNanoBox='22 nanometers'
+
+ItemName.EndlessPartyBox=Endless Party Crate
+ItemTooltip.EndlessPartyBox='It's a party in a box!'
+
+ItemName.EndlessSilverBull=Endless Silver Pouch
+ItemTooltip.EndlessSilverBull='Sadly these do not repell werewolves'
+
+ItemName.EndlessVenomBox=Endless Venom Crate
+ItemTooltip.EndlessVenomBox='Enemy of the Endless Spider-man Crate'
+
+ItemName.EndlessWoodBull=Endless Wooden Bullet Pile
+ItemTooltip.EndlessWoodBull={$Mods.ExtraGunGear.Common.Tooltip8}
+
+ItemName.FireBullet=Incendiary Bullet
+ItemTooltip.FireBullet='You best head for the hills, I'm on fire'
+
+ItemName.GoldenSR=Golden Sniper Rifle
+ItemTooltip.GoldenSR={$Mods.ExtraGunGear.Common.Tooltip6}\n'A reward for competitiveness'
+
+ItemName.HallowedSG=Hallowed Spreader
+ItemTooltip.HallowedSG=Shoots a ricocheting, crystal bullet\n'What you use when you want bullets on toast'
+
+ItemName.HellfireAssaultRifle=Hellfire Assault Rifle
+ItemTooltip.HellfireAssaultRifle=Three round burst\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'Die die die!'
+
+ItemName.PumpkinAR=Decapitator
+ItemTooltip.PumpkinAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\nFires an additional scythe blade\n'Let's not lose our heads'
+
+ItemName.RendAsunder=Rend Asunder
+ItemTooltip.RendAsunder={$Mods.ExtraGunGear.Common.Tooltip7}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'An assassin's right-hand man'
+
+ItemName.ShroomiteAR=Shroomite Assault Rifle
+ItemTooltip.ShroomiteAR={$Mods.ExtraGunGear.Common.Tooltip4}\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'Delicious and potent!'
+
+ItemName.VortexAR=Vortex Pulse Rifle
+ItemTooltip.VortexAR=Five round burst\n{$Mods.ExtraGunGear.Common.Tooltip5}\n'I love the smell of pulse munitions in the morning'
+
+ItemName.WoodBull=Wooden Bullet
+ItemTooltip.WoodBull={$Mods.ExtraGunGear.Common.Tooltip8}
+
+ItemName.WoodSG=Pipe Shotgun
+ItemTooltip.WoodSG=Fires a spread of bullets\n'For those who are wanderers'
+
+
+// ExtraGunGear.NPCs
+
+
+NPCName.SkeletonRifleman=Skeleton Soldier
+
+
+// ExtraGunGear.Projectiles
+
+ProjectileName.FireBullet=Incendiary Bullet
+
+ProjectileName.PumpkinSickle=Pumpkin Sickle
+
+ProjectileName.SpikeBall=Spike Ball
+
+ProjectileName.WoodBull=Wooden Bullet
